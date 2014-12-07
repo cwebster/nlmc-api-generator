@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE0432911A35023600F09F4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432901A35023600F09F4C /* AppDelegate.m */; };
+		DE0432931A35023600F09F4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432921A35023600F09F4C /* main.m */; };
+		DE0432961A35023600F09F4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432951A35023600F09F4C /* ViewController.m */; };
+		DE0432991A35023600F09F4C /* NLMC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */; };
+		DE04329B1A35023600F09F4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE04329A1A35023600F09F4C /* Images.xcassets */; };
+		DE04329E1A35023600F09F4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE04329C1A35023600F09F4C /* Main.storyboard */; };
+		DE0432AA1A35023600F09F4C /* NLMCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432A91A35023600F09F4C /* NLMCTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE0432A41A35023600F09F4C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE0432821A35023600F09F4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE0432891A35023600F09F4C;
+			remoteInfo = NLMC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE04328A1A35023600F09F4C /* NLMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NLMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE04328E1A35023600F09F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE04328F1A35023600F09F4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DE0432901A35023600F09F4C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DE0432921A35023600F09F4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DE0432941A35023600F09F4C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DE0432951A35023600F09F4C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DE0432981A35023600F09F4C /* NLMC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NLMC.xcdatamodel; sourceTree = "<group>"; };
+		DE04329A1A35023600F09F4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE04329D1A35023600F09F4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE0432A31A35023600F09F4C /* NLMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NLMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0432A81A35023600F09F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE0432A91A35023600F09F4C /* NLMCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLMCTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE0432871A35023600F09F4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0432A01A35023600F09F4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE0432811A35023600F09F4C = {
+			isa = PBXGroup;
+			children = (
+				DE04328C1A35023600F09F4C /* NLMC */,
+				DE0432A61A35023600F09F4C /* NLMCTests */,
+				DE04328B1A35023600F09F4C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE04328B1A35023600F09F4C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE04328A1A35023600F09F4C /* NLMC.app */,
+				DE0432A31A35023600F09F4C /* NLMCTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE04328C1A35023600F09F4C /* NLMC */ = {
+			isa = PBXGroup;
+			children = (
+				DE04328F1A35023600F09F4C /* AppDelegate.h */,
+				DE0432901A35023600F09F4C /* AppDelegate.m */,
+				DE0432941A35023600F09F4C /* ViewController.h */,
+				DE0432951A35023600F09F4C /* ViewController.m */,
+				DE04329A1A35023600F09F4C /* Images.xcassets */,
+				DE04329C1A35023600F09F4C /* Main.storyboard */,
+				DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */,
+				DE04328D1A35023600F09F4C /* Supporting Files */,
+			);
+			path = NLMC;
+			sourceTree = "<group>";
+		};
+		DE04328D1A35023600F09F4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE04328E1A35023600F09F4C /* Info.plist */,
+				DE0432921A35023600F09F4C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE0432A61A35023600F09F4C /* NLMCTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE0432A91A35023600F09F4C /* NLMCTests.m */,
+				DE0432A71A35023600F09F4C /* Supporting Files */,
+			);
+			path = NLMCTests;
+			sourceTree = "<group>";
+		};
+		DE0432A71A35023600F09F4C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE0432A81A35023600F09F4C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE0432891A35023600F09F4C /* NLMC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0432AD1A35023600F09F4C /* Build configuration list for PBXNativeTarget "NLMC" */;
+			buildPhases = (
+				DE0432861A35023600F09F4C /* Sources */,
+				DE0432871A35023600F09F4C /* Frameworks */,
+				DE0432881A35023600F09F4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NLMC;
+			productName = NLMC;
+			productReference = DE04328A1A35023600F09F4C /* NLMC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE0432A21A35023600F09F4C /* NLMCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE0432B01A35023600F09F4C /* Build configuration list for PBXNativeTarget "NLMCTests" */;
+			buildPhases = (
+				DE04329F1A35023600F09F4C /* Sources */,
+				DE0432A01A35023600F09F4C /* Frameworks */,
+				DE0432A11A35023600F09F4C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE0432A51A35023600F09F4C /* PBXTargetDependency */,
+			);
+			name = NLMCTests;
+			productName = NLMCTests;
+			productReference = DE0432A31A35023600F09F4C /* NLMCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE0432821A35023600F09F4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Craig Webster";
+				TargetAttributes = {
+					DE0432891A35023600F09F4C = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DE0432A21A35023600F09F4C = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = DE0432891A35023600F09F4C;
+					};
+				};
+			};
+			buildConfigurationList = DE0432851A35023600F09F4C /* Build configuration list for PBXProject "NLMC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE0432811A35023600F09F4C;
+			productRefGroup = DE04328B1A35023600F09F4C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE0432891A35023600F09F4C /* NLMC */,
+				DE0432A21A35023600F09F4C /* NLMCTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE0432881A35023600F09F4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE04329B1A35023600F09F4C /* Images.xcassets in Resources */,
+				DE04329E1A35023600F09F4C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE0432A11A35023600F09F4C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE0432861A35023600F09F4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0432961A35023600F09F4C /* ViewController.m in Sources */,
+				DE0432931A35023600F09F4C /* main.m in Sources */,
+				DE0432911A35023600F09F4C /* AppDelegate.m in Sources */,
+				DE0432991A35023600F09F4C /* NLMC.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE04329F1A35023600F09F4C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE0432AA1A35023600F09F4C /* NLMCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE0432A51A35023600F09F4C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE0432891A35023600F09F4C /* NLMC */;
+			targetProxy = DE0432A41A35023600F09F4C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE04329C1A35023600F09F4C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE04329D1A35023600F09F4C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE0432AB1A35023600F09F4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DE0432AC1A35023600F09F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DE0432AE1A35023600F09F4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NLMC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE0432AF1A35023600F09F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NLMC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE0432B11A35023600F09F4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NLMCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NLMC.app/Contents/MacOS/NLMC";
+			};
+			name = Debug;
+		};
+		DE0432B21A35023600F09F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = NLMCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NLMC.app/Contents/MacOS/NLMC";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE0432851A35023600F09F4C /* Build configuration list for PBXProject "NLMC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0432AB1A35023600F09F4C /* Debug */,
+				DE0432AC1A35023600F09F4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE0432AD1A35023600F09F4C /* Build configuration list for PBXNativeTarget "NLMC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0432AE1A35023600F09F4C /* Debug */,
+				DE0432AF1A35023600F09F4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DE0432B01A35023600F09F4C /* Build configuration list for PBXNativeTarget "NLMCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE0432B11A35023600F09F4C /* Debug */,
+				DE0432B21A35023600F09F4C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE0432981A35023600F09F4C /* NLMC.xcdatamodel */,
+			);
+			currentVersion = DE0432981A35023600F09F4C /* NLMC.xcdatamodel */;
+			path = NLMC.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE0432821A35023600F09F4C /* Project object */;
+}
