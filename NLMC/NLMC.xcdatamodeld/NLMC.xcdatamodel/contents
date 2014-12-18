@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="untitled.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C68m" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CollectionMethod" representedClassName="CollectionMethod" syncable="YES">
+        <attribute name="method" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="snomedConceptID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="nlmcRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NLMCTest" inverseName="collectionMethod" inverseEntity="NLMCTest" syncable="YES"/>
+    </entity>
+    <entity name="CollectionSpecimen" representedClassName="CollectionSpecimen" syncable="YES">
+        <attribute name="morphologyRequired" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="snomedConceptID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="topographyRequired" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="nlmcTest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NLMCTest" inverseName="collectionSpecimen" inverseEntity="NLMCTest" syncable="YES"/>
+    </entity>
+    <entity name="NLMCTest" representedClassName="NLMCTest" syncable="YES">
+        <attribute name="catalogueVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="discipline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstPublishedVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastModified" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="nlmcID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nlmcRecommendedDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="snomedConceptID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="collectionMethod" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectionMethod" inverseName="nlmcRelationship" inverseEntity="CollectionMethod" syncable="YES"/>
+        <relationship name="collectionSpecimen" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectionSpecimen" inverseName="nlmcTest" inverseEntity="CollectionSpecimen" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CollectionSpecimen" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="NLMCTest" positionX="-54" positionY="-9" width="128" height="238"/>
+        <element name="CollectionMethod" positionX="-45" positionY="54" width="128" height="88"/>
+    </elements>
 </model>

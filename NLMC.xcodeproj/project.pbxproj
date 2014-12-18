@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34633F5ACC4485EDD34AC31D /* libPods-NLMCTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3AB85C48CA46A81E2EE9666 /* libPods-NLMCTests.a */; };
+		B7725B4B8F68314C33112ACD /* libPods-NLMC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69623F58BC2F08F44FD3115D /* libPods-NLMC.a */; };
 		DE0432911A35023600F09F4C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432901A35023600F09F4C /* AppDelegate.m */; };
 		DE0432931A35023600F09F4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432921A35023600F09F4C /* main.m */; };
-		DE0432961A35023600F09F4C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432951A35023600F09F4C /* ViewController.m */; };
+		DE0432961A35023600F09F4C /* CWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432951A35023600F09F4C /* CWMainViewController.m */; };
 		DE0432991A35023600F09F4C /* NLMC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */; };
 		DE04329B1A35023600F09F4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE04329A1A35023600F09F4C /* Images.xcassets */; };
 		DE04329E1A35023600F09F4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE04329C1A35023600F09F4C /* Main.storyboard */; };
 		DE0432AA1A35023600F09F4C /* NLMCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432A91A35023600F09F4C /* NLMCTests.m */; };
+		DE0432B91A35026200F09F4C /* CWNLMCFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */; };
+		DE0432BA1A35026200F09F4C /* CWNLMCFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */; };
+		DE0432BD1A35047200F09F4C /* CWFileUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432BC1A35047200F09F4C /* CWFileUtilities.m */; };
+		DE0432BE1A35047200F09F4C /* CWFileUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432BC1A35047200F09F4C /* CWFileUtilities.m */; };
+		DE0432C11A35C74D00F09F4C /* NSString+CSVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432C01A35C74D00F09F4C /* NSString+CSVUtils.m */; };
+		DE0432C21A35C74D00F09F4C /* NSString+CSVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432C01A35C74D00F09F4C /* NSString+CSVUtils.m */; };
+		DE0432D01A39AA0700F09F4C /* CWMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */; };
+		DE0432D11A39AA0700F09F4C /* CWMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */; };
+		DE0432DC1A3B492000F09F4C /* NLMCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432DB1A3B492000F09F4C /* NLMCTest.m */; };
+		DE0432DD1A3B492000F09F4C /* NLMCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432DB1A3B492000F09F4C /* NLMCTest.m */; };
+		DE0432EC1A43994700F09F4C /* CollectionSpecimen.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432EB1A43994700F09F4C /* CollectionSpecimen.m */; };
+		DE0432EF1A43994800F09F4C /* CollectionMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432EE1A43994800F09F4C /* CollectionMethod.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +41,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02A65C07B594197232ECEBE8 /* Pods-NLMC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLMC.release.xcconfig"; path = "Pods/Target Support Files/Pods-NLMC/Pods-NLMC.release.xcconfig"; sourceTree = "<group>"; };
+		5FB01A7698DA3C5E339C466A /* Pods-NLMCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLMCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NLMCTests/Pods-NLMCTests.debug.xcconfig"; sourceTree = "<group>"; };
+		69623F58BC2F08F44FD3115D /* libPods-NLMC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NLMC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F33A653EEAFBC40F6EA7FBF /* Pods-NLMCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLMCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NLMCTests/Pods-NLMCTests.release.xcconfig"; sourceTree = "<group>"; };
+		B3AB85C48CA46A81E2EE9666 /* libPods-NLMCTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NLMCTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE04328A1A35023600F09F4C /* NLMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NLMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE04328E1A35023600F09F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE04328F1A35023600F09F4C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE0432901A35023600F09F4C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE0432921A35023600F09F4C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DE0432941A35023600F09F4C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DE0432951A35023600F09F4C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DE0432941A35023600F09F4C /* CWMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWMainViewController.h; sourceTree = "<group>"; };
+		DE0432951A35023600F09F4C /* CWMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWMainViewController.m; sourceTree = "<group>"; };
 		DE0432981A35023600F09F4C /* NLMC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NLMC.xcdatamodel; sourceTree = "<group>"; };
 		DE04329A1A35023600F09F4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE04329D1A35023600F09F4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE0432A31A35023600F09F4C /* NLMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NLMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0432A81A35023600F09F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE0432A91A35023600F09F4C /* NLMCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLMCTests.m; sourceTree = "<group>"; };
+		DE0432B71A35026200F09F4C /* CWNLMCFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWNLMCFunctions.h; sourceTree = "<group>"; };
+		DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWNLMCFunctions.m; sourceTree = "<group>"; };
+		DE0432BB1A35047200F09F4C /* CWFileUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWFileUtilities.h; sourceTree = "<group>"; };
+		DE0432BC1A35047200F09F4C /* CWFileUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWFileUtilities.m; sourceTree = "<group>"; };
+		DE0432BF1A35C74D00F09F4C /* NSString+CSVUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CSVUtils.h"; sourceTree = "<group>"; };
+		DE0432C01A35C74D00F09F4C /* NSString+CSVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSVUtils.m"; sourceTree = "<group>"; };
+		DE0432CE1A39AA0700F09F4C /* CWMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMainWindowController.h; sourceTree = "<group>"; };
+		DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMainWindowController.m; sourceTree = "<group>"; };
+		DE0432DA1A3B492000F09F4C /* NLMCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLMCTest.h; sourceTree = "<group>"; };
+		DE0432DB1A3B492000F09F4C /* NLMCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLMCTest.m; sourceTree = "<group>"; };
+		DE0432E21A42328800F09F4C /* XXXProbeIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XXXProbeIOS.framework; path = "../../Downloads/iOSCoreDataTest-iOS8/iOSSQLiteCoreDataTest1111-iOS8/XXXProbeIOS.framework"; sourceTree = "<group>"; };
+		DE0432EA1A43994700F09F4C /* CollectionSpecimen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionSpecimen.h; sourceTree = "<group>"; };
+		DE0432EB1A43994700F09F4C /* CollectionSpecimen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionSpecimen.m; sourceTree = "<group>"; };
+		DE0432ED1A43994800F09F4C /* CollectionMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionMethod.h; sourceTree = "<group>"; };
+		DE0432EE1A43994800F09F4C /* CollectionMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionMethod.m; sourceTree = "<group>"; };
+		E4562A5AB38E92A1C4D20ECC /* Pods-NLMC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLMC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NLMC/Pods-NLMC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7725B4B8F68314C33112ACD /* libPods-NLMC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +90,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34633F5ACC4485EDD34AC31D /* libPods-NLMCTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20156E8FF4B8C853AE48DF2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE0432E21A42328800F09F4C /* XXXProbeIOS.framework */,
+				69623F58BC2F08F44FD3115D /* libPods-NLMC.a */,
+				B3AB85C48CA46A81E2EE9666 /* libPods-NLMCTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DE0432811A35023600F09F4C = {
 			isa = PBXGroup;
 			children = (
 				DE04328C1A35023600F09F4C /* NLMC */,
 				DE0432A61A35023600F09F4C /* NLMCTests */,
 				DE04328B1A35023600F09F4C /* Products */,
+				FB21B19C0378A7019DB1FDA3 /* Pods */,
+				20156E8FF4B8C853AE48DF2C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,12 +130,12 @@
 		DE04328C1A35023600F09F4C /* NLMC */ = {
 			isa = PBXGroup;
 			children = (
+				DE0432C51A35D7E500F09F4C /* Controllers */,
+				DE0432C41A35D7DD00F09F4C /* Views */,
+				DE0432C31A35D7D500F09F4C /* Models */,
 				DE04328F1A35023600F09F4C /* AppDelegate.h */,
 				DE0432901A35023600F09F4C /* AppDelegate.m */,
-				DE0432941A35023600F09F4C /* ViewController.h */,
-				DE0432951A35023600F09F4C /* ViewController.m */,
 				DE04329A1A35023600F09F4C /* Images.xcassets */,
-				DE04329C1A35023600F09F4C /* Main.storyboard */,
 				DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */,
 				DE04328D1A35023600F09F4C /* Supporting Files */,
 			);
@@ -119,6 +168,55 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DE0432C31A35D7D500F09F4C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE0432ED1A43994800F09F4C /* CollectionMethod.h */,
+				DE0432EE1A43994800F09F4C /* CollectionMethod.m */,
+				DE0432EA1A43994700F09F4C /* CollectionSpecimen.h */,
+				DE0432EB1A43994700F09F4C /* CollectionSpecimen.m */,
+				DE0432DA1A3B492000F09F4C /* NLMCTest.h */,
+				DE0432DB1A3B492000F09F4C /* NLMCTest.m */,
+				DE0432BF1A35C74D00F09F4C /* NSString+CSVUtils.h */,
+				DE0432C01A35C74D00F09F4C /* NSString+CSVUtils.m */,
+				DE0432BB1A35047200F09F4C /* CWFileUtilities.h */,
+				DE0432BC1A35047200F09F4C /* CWFileUtilities.m */,
+				DE0432B71A35026200F09F4C /* CWNLMCFunctions.h */,
+				DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DE0432C41A35D7DD00F09F4C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE04329C1A35023600F09F4C /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DE0432C51A35D7E500F09F4C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE0432941A35023600F09F4C /* CWMainViewController.h */,
+				DE0432951A35023600F09F4C /* CWMainViewController.m */,
+				DE0432CE1A39AA0700F09F4C /* CWMainWindowController.h */,
+				DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FB21B19C0378A7019DB1FDA3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4562A5AB38E92A1C4D20ECC /* Pods-NLMC.debug.xcconfig */,
+				02A65C07B594197232ECEBE8 /* Pods-NLMC.release.xcconfig */,
+				5FB01A7698DA3C5E339C466A /* Pods-NLMCTests.debug.xcconfig */,
+				8F33A653EEAFBC40F6EA7FBF /* Pods-NLMCTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE0432AD1A35023600F09F4C /* Build configuration list for PBXNativeTarget "NLMC" */;
 			buildPhases = (
+				8D6649F2953C2747B7E78CF1 /* Check Pods Manifest.lock */,
 				DE0432861A35023600F09F4C /* Sources */,
 				DE0432871A35023600F09F4C /* Frameworks */,
 				DE0432881A35023600F09F4C /* Resources */,
+				7F25F235FC0C2AF6DD145102 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,9 +243,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE0432B01A35023600F09F4C /* Build configuration list for PBXNativeTarget "NLMCTests" */;
 			buildPhases = (
+				0BE13839844E00BB8E17D99F /* Check Pods Manifest.lock */,
 				DE04329F1A35023600F09F4C /* Sources */,
 				DE0432A01A35023600F09F4C /* Frameworks */,
 				DE0432A11A35023600F09F4C /* Resources */,
+				4CF51BA527B9593BB453BC2C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,15 +315,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BE13839844E00BB8E17D99F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CF51BA527B9593BB453BC2C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NLMCTests/Pods-NLMCTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F25F235FC0C2AF6DD145102 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NLMC/Pods-NLMC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D6649F2953C2747B7E78CF1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DE0432861A35023600F09F4C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE0432961A35023600F09F4C /* ViewController.m in Sources */,
+				DE0432EF1A43994800F09F4C /* CollectionMethod.m in Sources */,
+				DE0432BD1A35047200F09F4C /* CWFileUtilities.m in Sources */,
+				DE0432961A35023600F09F4C /* CWMainViewController.m in Sources */,
 				DE0432931A35023600F09F4C /* main.m in Sources */,
 				DE0432911A35023600F09F4C /* AppDelegate.m in Sources */,
+				DE0432DC1A3B492000F09F4C /* NLMCTest.m in Sources */,
+				DE0432B91A35026200F09F4C /* CWNLMCFunctions.m in Sources */,
+				DE0432D01A39AA0700F09F4C /* CWMainWindowController.m in Sources */,
+				DE0432C11A35C74D00F09F4C /* NSString+CSVUtils.m in Sources */,
 				DE0432991A35023600F09F4C /* NLMC.xcdatamodeld in Sources */,
+				DE0432EC1A43994700F09F4C /* CollectionSpecimen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +402,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE0432AA1A35023600F09F4C /* NLMCTests.m in Sources */,
+				DE0432C21A35C74D00F09F4C /* NSString+CSVUtils.m in Sources */,
+				DE0432BA1A35026200F09F4C /* CWNLMCFunctions.m in Sources */,
+				DE0432D11A39AA0700F09F4C /* CWMainWindowController.m in Sources */,
+				DE0432BE1A35047200F09F4C /* CWFileUtilities.m in Sources */,
+				DE0432DD1A3B492000F09F4C /* NLMCTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,9 +510,14 @@
 		};
 		DE0432AE1A35023600F09F4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4562A5AB38E92A1C4D20ECC /* Pods-NLMC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cwebster/Downloads/iOSCoreDataTest-iOS8/iOSSQLiteCoreDataTest1111-iOS8",
+				);
 				INFOPLIST_FILE = NLMC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -344,9 +526,14 @@
 		};
 		DE0432AF1A35023600F09F4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A65C07B594197232ECEBE8 /* Pods-NLMC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cwebster/Downloads/iOSCoreDataTest-iOS8/iOSSQLiteCoreDataTest1111-iOS8",
+				);
 				INFOPLIST_FILE = NLMC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -355,6 +542,7 @@
 		};
 		DE0432B11A35023600F09F4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FB01A7698DA3C5E339C466A /* Pods-NLMCTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -375,6 +563,7 @@
 		};
 		DE0432B21A35023600F09F4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F33A653EEAFBC40F6EA7FBF /* Pods-NLMCTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -408,6 +597,7 @@
 				DE0432AF1A35023600F09F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DE0432B01A35023600F09F4C /* Build configuration list for PBXNativeTarget "NLMCTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +606,7 @@
 				DE0432B21A35023600F09F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
