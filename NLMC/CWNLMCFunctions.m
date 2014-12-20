@@ -103,30 +103,24 @@
         self.currentTest.collectionMethod = self.collectionMethodSet;
         self.currentTest.collectionSpecimen = self.collectionSpecimenSet;
 
-        [self.moc MR_saveOnlySelfAndWait];
+        //[self.moc MR_saveOnlySelfAndWait];
 
         //empty all objects form collection and specimen set
+//        NSProcessInfo *processInfo = [NSProcessInfo processInfo];
+//        [processInfo disableSuddenTermination];
+//        [processInfo disableAutomaticTermination:@"Application is currently saving to persistent store"];
+//        
+//        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+//        
+//            
+//        } completion:^(BOOL success, NSError *error) {
+//            [processInfo enableSuddenTermination];
+//            [processInfo enableAutomaticTermination:@"Application has finished saving to the persistent store"];
+//        }];
         
         [self.collectionMethodSet removeAllObjects];
         [self.collectionSpecimenSet removeAllObjects];
         self.currentTest = nil;
-
-        //        NSProcessInfo *processInfo = [NSProcessInfo processInfo];
-        //
-        //        [processInfo disableSuddenTermination];
-        //        [processInfo disableAutomaticTermination:@"Application is currently saving to persistent store"];
-        //
-        //
-        //
-        //
-        //        [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        //
-        //
-        //
-        //        } completion:^(BOOL success, NSError *error) {
-        //            [processInfo enableSuddenTermination];
-        //            [processInfo enableAutomaticTermination:@"Application has finished saving to the persistent store"];
-        //        }];
     }
 }
 
