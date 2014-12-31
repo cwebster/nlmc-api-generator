@@ -2,18 +2,18 @@
 //  CollectionMethod.m
 //  NLMC
 //
-//  Created by Craig Webster on 18/12/2014.
+//  Created by Craig Webster on 31/12/2014.
 //  Copyright (c) 2014 Craig Webster. All rights reserved.
 //
 
 #import "CollectionMethod.h"
-#import "NLMCTest.h"
+#import "CollectionSpecimen.h"
 
 
 @implementation CollectionMethod
 
-@dynamic snomedConceptID;
 @dynamic method;
-@dynamic nlmcRelationship;
+@dynamic snomedConceptID;
+@dynamic collectionSpecimenRelationship;
 
 @end

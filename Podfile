@@ -5,11 +5,13 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'NLMC' do
 	pod "MagicalRecord"
+	pod "TBXML"
 end
 
 target 'NLMCTests' do
-
+	pod "TBXML"
 	pod "MagicalRecord"
 
 end
 
+inhibit_all_warnings!

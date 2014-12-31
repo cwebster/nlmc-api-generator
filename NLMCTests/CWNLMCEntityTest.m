@@ -1,33 +1,41 @@
 //
-//  NLMCTests.m
-//  NLMCTests
+//  CWNLMCEntityTest.m
+//  NLMC
 //
-//  Created by Craig Webster on 07/12/2014.
+//  Created by Craig Webster on 21/12/2014.
 //  Copyright (c) 2014 Craig Webster. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
 #import <XCTest/XCTest.h>
+#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import "NLMCTest.h"
 
-@interface NLMCTests : XCTestCase
+@interface CWNLMCEntityTest : XCTestCase
 
 @end
 
-@implementation NLMCTests
+@implementation CWNLMCEntityTest
 
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+   	[MagicalRecord setDefaultModelFromClass:[self class]];
+    [MagicalRecord setupCoreDataStackWithInMemoryStore];
+    
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    [MagicalRecord cleanUp];
     [super tearDown];
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+
+    NLMCTest *testEntity = [NLMCTest MR_createEntity];
+    XCTAssertNotNil(testEntity, @"NLMC Test Entity Not Nil");
+                   
 }
 
 - (void)testPerformanceExample {

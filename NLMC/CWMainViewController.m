@@ -16,8 +16,21 @@
 {
     [super viewDidLoad];
 
+    // Set up core data stack
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"MyDatabase.sqlite"];
+    self.moc = [NSManagedObjectContext MR_contextForCurrentThread];
+
+    // Register Observer for Main table change
+    [self.nlmcArrayController addObserver:self forKeyPath:@"selection" options:0 context:nil];
+
+    //init a datasources for sub tables
+    self.collectionMethodsDataSource = [[CWCollectionMethodsTableViewDataSource alloc] init];
+    self.collectionSpecimensDataSource = [[CWCollectionSpecimenDataSource alloc] init];
+    // Set datasources for sub tables
+    [self.collectionSpecimensTableView setDataSource:self.collectionSpecimensDataSource];
+    [self.collectionMethodsTableView setDataSource:self.collectionMethodsDataSource];
+
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)setRepresentedObject:(id)representedObject
@@ -25,99 +38,77 @@
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
-    
 }
 
--(IBAction)createTestNames:(id)sender{
-    NSLog(@"doOpen");
-    NSOpenPanel *tvarNSOpenPanelObj	= [NSOpenPanel openPanel];
-    NSInteger tvarNSInteger	= [tvarNSOpenPanelObj runModal];
-    if(tvarNSInteger == NSModalResponseOK){
-        NSLog(@"doOpen we have an OK button");
-    } else if(tvarNSInteger == NSModalResponseCancel) {
-        NSLog(@"doOpen we have a Cancel button");
-        return;
-    } else {
-        NSLog(@"doOpen tvarInt not equal 1 or zero = %3ld",(long)tvarNSInteger);
-        return;
-    } // end if
-    
-    NSURL * tvarFilename = [tvarNSOpenPanelObj URL];
-    NSLog(@"doOpen filename = %@",tvarFilename);
-    
-    NSMutableDictionary  *api = [CWNLMCFunctions getTestNamesJSON:tvarFilename];
-    
-    // create a JSON version of imported XML file
-    NSError* error;
-    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:api options:NSJSONWritingPrettyPrinted error:&error];
-    NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
-    // get the file url
-    NSSavePanel* zSavePanel = [NSSavePanel savePanel];
-    NSInteger zResult = [zSavePanel runModal];
-    if (zResult == NSFileHandlingPanelCancelButton) {
-        NSLog(@"writeUsingSavePanel cancelled");
-        return;
+- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
+{
+
+    if ([keyPath isEqualToString:@"selection"]) {
+        // Update the datasource arrays for Collection Methods and Collection Specimens
+        self.currentCollectionMethods = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionMethod"] allObjects]];
+        self.collectionMethodsDataSource.currentCollectionMethodsArray = self.currentCollectionMethods;
+
+        self.currentCollectionSpecimens = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionSpecimen"] allObjects]];
+        self.collectionSpecimensDataSource.currentSpecimensMethodsArray = self.currentCollectionSpecimens;
+
+        // Reload New Data
+        [self.collectionMethodsTableView reloadData];
+        [self.collectionSpecimensTableView reloadData];
     }
-    NSURL* zUrl = [zSavePanel URL];
-    
-    //write
-    BOOL zBoolResult = [jsonString writeToURL:zUrl
-                                   atomically:YES
-                                     encoding:NSUTF8StringEncoding
-                                        error:NULL];
-    if (!zBoolResult) {
-        NSLog(@"writeUsingSavePanel failed");
-    }
+}
+
+- (IBAction)createTestNames:(id)sender
+{
 
 }
 
 - (IBAction)parseNLMCXML:(id)sender
 {
     NSLog(@"doOpen");
-    NSOpenPanel *tvarNSOpenPanelObj	= [NSOpenPanel openPanel];
-    NSInteger tvarNSInteger	= [tvarNSOpenPanelObj runModal];
-    if(tvarNSInteger == NSModalResponseOK){
+    NSOpenPanel* tvarNSOpenPanelObj = [NSOpenPanel openPanel];
+    NSInteger tvarNSInteger = [tvarNSOpenPanelObj runModal];
+    if (tvarNSInteger == NSModalResponseOK) {
         NSLog(@"doOpen we have an OK button");
-    } else if(tvarNSInteger == NSModalResponseCancel) {
+    }
+    else if (tvarNSInteger == NSModalResponseCancel) {
         NSLog(@"doOpen we have a Cancel button");
         return;
-    } else {
-        NSLog(@"doOpen tvarInt not equal 1 or zero = %3ld",(long)tvarNSInteger);
+    }
+    else {
+        NSLog(@"doOpen tvarInt not equal 1 or zero = %3ld", (long)tvarNSInteger);
+        return;
+    } // end if
+
+    NSURL* tvarFilename = [tvarNSOpenPanelObj URL];
+    NSLog(@"doOpen filename = %@", tvarFilename);
+
+    CWNLMCFunctions* Parser = [[CWNLMCFunctions alloc] init];
+
+    [Parser parseXMLFile:tvarFilename];
+}
+
+
+- (IBAction)parseXMLusingDom:(id)sender
+{
+    NSLog(@"doOpen");
+    NSOpenPanel* tvarNSOpenPanelObj = [NSOpenPanel openPanel];
+    NSInteger tvarNSInteger = [tvarNSOpenPanelObj runModal];
+    if (tvarNSInteger == NSModalResponseOK) {
+        NSLog(@"doOpen we have an OK button");
+    }
+    else if (tvarNSInteger == NSModalResponseCancel) {
+        NSLog(@"doOpen we have a Cancel button");
+        return;
+    }
+    else {
+        NSLog(@"doOpen tvarInt not equal 1 or zero = %3ld", (long)tvarNSInteger);
         return;
     } // end if
     
-    NSURL * tvarFilename = [tvarNSOpenPanelObj URL];
-    NSLog(@"doOpen filename = %@",tvarFilename);
+    NSURL* tvarFilename = [tvarNSOpenPanelObj URL];
+    NSLog(@"doOpen filename = %@", tvarFilename);
     
-    CWNLMCFunctions* Parser = [[CWNLMCFunctions alloc] init];
-    
-    [Parser parseXMLFile:tvarFilename];
-
-    //NSError* error;
-
-    // create a JSON version of imported XML file
-   // NSData* jsonData = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:&error];
-   // NSString* jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-
-    // get the file url
-//    NSSavePanel* zSavePanel = [NSSavePanel savePanel];
-//    NSInteger zResult = [zSavePanel runModal];
-//    if (zResult == NSFileHandlingPanelCancelButton) {
-//        NSLog(@"writeUsingSavePanel cancelled");
-//        return;
-//    }
-//    NSURL* zUrl = [zSavePanel URL];
-//
-//    //write
-//    BOOL zBoolResult = [jsonString writeToURL:zUrl
-//                                   atomically:YES
-//                                     encoding:NSUTF8StringEncoding
-//                                        error:NULL];
-//    if (!zBoolResult) {
-//        NSLog(@"writeUsingSavePanel failed");
-//    }
-
+    [CWNLMCXMLParser parseXMLFile:tvarFilename];
 }
 
 - (IBAction)jsonNLMC:(id)sender

@@ -15,7 +15,6 @@
 		DE0432991A35023600F09F4C /* NLMC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */; };
 		DE04329B1A35023600F09F4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE04329A1A35023600F09F4C /* Images.xcassets */; };
 		DE04329E1A35023600F09F4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE04329C1A35023600F09F4C /* Main.storyboard */; };
-		DE0432AA1A35023600F09F4C /* NLMCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432A91A35023600F09F4C /* NLMCTests.m */; };
 		DE0432B91A35026200F09F4C /* CWNLMCFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */; };
 		DE0432BA1A35026200F09F4C /* CWNLMCFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */; };
 		DE0432BD1A35047200F09F4C /* CWFileUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432BC1A35047200F09F4C /* CWFileUtilities.m */; };
@@ -24,10 +23,20 @@
 		DE0432C21A35C74D00F09F4C /* NSString+CSVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432C01A35C74D00F09F4C /* NSString+CSVUtils.m */; };
 		DE0432D01A39AA0700F09F4C /* CWMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */; };
 		DE0432D11A39AA0700F09F4C /* CWMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */; };
-		DE0432DC1A3B492000F09F4C /* NLMCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432DB1A3B492000F09F4C /* NLMCTest.m */; };
-		DE0432DD1A3B492000F09F4C /* NLMCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432DB1A3B492000F09F4C /* NLMCTest.m */; };
-		DE0432EC1A43994700F09F4C /* CollectionSpecimen.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432EB1A43994700F09F4C /* CollectionSpecimen.m */; };
-		DE0432EF1A43994800F09F4C /* CollectionMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432EE1A43994800F09F4C /* CollectionMethod.m */; };
+		DE7B63121A4701CB00D6A0E1 /* CWNLMCEntityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7B63111A4701CB00D6A0E1 /* CWNLMCEntityTest.m */; };
+		DE7B63151A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7B63141A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m */; };
+		DE7B631C1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7B631B1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m */; };
+		DE7B631D1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7B631B1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m */; };
+		DEA102BD1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml in Resources */ = {isa = PBXBuildFile; fileRef = DEA102BC1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml */; };
+		DEA102BE1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml in Resources */ = {isa = PBXBuildFile; fileRef = DEA102BC1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml */; };
+		DEDDEF831A52FC5E00F6805D /* CWNLMCXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF821A52FC5E00F6805D /* CWNLMCXMLParser.m */; };
+		DEDDEF841A52FC5E00F6805D /* CWNLMCXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF821A52FC5E00F6805D /* CWNLMCXMLParser.m */; };
+		DEDDEF871A542CE800F6805D /* CollectionSpecimen.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF861A542CE800F6805D /* CollectionSpecimen.m */; };
+		DEDDEF881A542CE800F6805D /* CollectionSpecimen.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF861A542CE800F6805D /* CollectionSpecimen.m */; };
+		DEDDEF8B1A542CE800F6805D /* CollectionMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF8A1A542CE800F6805D /* CollectionMethod.m */; };
+		DEDDEF8C1A542CE800F6805D /* CollectionMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF8A1A542CE800F6805D /* CollectionMethod.m */; };
+		DEDDEF931A5442F200F6805D /* NLMCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF921A5442F200F6805D /* NLMCTest.m */; };
+		DEDDEF941A5442F200F6805D /* NLMCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF921A5442F200F6805D /* NLMCTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +67,6 @@
 		DE04329D1A35023600F09F4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE0432A31A35023600F09F4C /* NLMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NLMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0432A81A35023600F09F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE0432A91A35023600F09F4C /* NLMCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NLMCTests.m; sourceTree = "<group>"; };
 		DE0432B71A35026200F09F4C /* CWNLMCFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWNLMCFunctions.h; sourceTree = "<group>"; };
 		DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWNLMCFunctions.m; sourceTree = "<group>"; };
 		DE0432BB1A35047200F09F4C /* CWFileUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWFileUtilities.h; sourceTree = "<group>"; };
@@ -67,13 +75,21 @@
 		DE0432C01A35C74D00F09F4C /* NSString+CSVUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CSVUtils.m"; sourceTree = "<group>"; };
 		DE0432CE1A39AA0700F09F4C /* CWMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMainWindowController.h; sourceTree = "<group>"; };
 		DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMainWindowController.m; sourceTree = "<group>"; };
-		DE0432DA1A3B492000F09F4C /* NLMCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLMCTest.h; sourceTree = "<group>"; };
-		DE0432DB1A3B492000F09F4C /* NLMCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLMCTest.m; sourceTree = "<group>"; };
 		DE0432E21A42328800F09F4C /* XXXProbeIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XXXProbeIOS.framework; path = "../../Downloads/iOSCoreDataTest-iOS8/iOSSQLiteCoreDataTest1111-iOS8/XXXProbeIOS.framework"; sourceTree = "<group>"; };
-		DE0432EA1A43994700F09F4C /* CollectionSpecimen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionSpecimen.h; sourceTree = "<group>"; };
-		DE0432EB1A43994700F09F4C /* CollectionSpecimen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionSpecimen.m; sourceTree = "<group>"; };
-		DE0432ED1A43994800F09F4C /* CollectionMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionMethod.h; sourceTree = "<group>"; };
-		DE0432EE1A43994800F09F4C /* CollectionMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionMethod.m; sourceTree = "<group>"; };
+		DE7B63111A4701CB00D6A0E1 /* CWNLMCEntityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWNLMCEntityTest.m; sourceTree = "<group>"; };
+		DE7B63131A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCollectionMethodsTableViewDataSource.h; sourceTree = "<group>"; };
+		DE7B63141A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCollectionMethodsTableViewDataSource.m; sourceTree = "<group>"; };
+		DE7B631A1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCollectionSpecimenDataSource.h; sourceTree = "<group>"; };
+		DE7B631B1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCollectionSpecimenDataSource.m; sourceTree = "<group>"; };
+		DEA102BC1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NLMC_Live_Apr_2014_release4_0.xml; sourceTree = "<group>"; };
+		DEDDEF811A52FC5E00F6805D /* CWNLMCXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWNLMCXMLParser.h; sourceTree = "<group>"; };
+		DEDDEF821A52FC5E00F6805D /* CWNLMCXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWNLMCXMLParser.m; sourceTree = "<group>"; };
+		DEDDEF851A542CE800F6805D /* CollectionSpecimen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionSpecimen.h; sourceTree = "<group>"; };
+		DEDDEF861A542CE800F6805D /* CollectionSpecimen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionSpecimen.m; sourceTree = "<group>"; };
+		DEDDEF891A542CE800F6805D /* CollectionMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionMethod.h; sourceTree = "<group>"; };
+		DEDDEF8A1A542CE800F6805D /* CollectionMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionMethod.m; sourceTree = "<group>"; };
+		DEDDEF911A5442F200F6805D /* NLMCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLMCTest.h; sourceTree = "<group>"; };
+		DEDDEF921A5442F200F6805D /* NLMCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLMCTest.m; sourceTree = "<group>"; };
 		E4562A5AB38E92A1C4D20ECC /* Pods-NLMC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NLMC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NLMC/Pods-NLMC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +154,8 @@
 				DE04329A1A35023600F09F4C /* Images.xcassets */,
 				DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */,
 				DE04328D1A35023600F09F4C /* Supporting Files */,
+				DEDDEF811A52FC5E00F6805D /* CWNLMCXMLParser.h */,
+				DEDDEF821A52FC5E00F6805D /* CWNLMCXMLParser.m */,
 			);
 			path = NLMC;
 			sourceTree = "<group>";
@@ -154,8 +172,8 @@
 		DE0432A61A35023600F09F4C /* NLMCTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE0432A91A35023600F09F4C /* NLMCTests.m */,
 				DE0432A71A35023600F09F4C /* Supporting Files */,
+				DE7B63111A4701CB00D6A0E1 /* CWNLMCEntityTest.m */,
 			);
 			path = NLMCTests;
 			sourceTree = "<group>";
@@ -163,6 +181,7 @@
 		DE0432A71A35023600F09F4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DEA102BC1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml */,
 				DE0432A81A35023600F09F4C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -171,12 +190,16 @@
 		DE0432C31A35D7D500F09F4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DE0432ED1A43994800F09F4C /* CollectionMethod.h */,
-				DE0432EE1A43994800F09F4C /* CollectionMethod.m */,
-				DE0432EA1A43994700F09F4C /* CollectionSpecimen.h */,
-				DE0432EB1A43994700F09F4C /* CollectionSpecimen.m */,
-				DE0432DA1A3B492000F09F4C /* NLMCTest.h */,
-				DE0432DB1A3B492000F09F4C /* NLMCTest.m */,
+				DEDDEF911A5442F200F6805D /* NLMCTest.h */,
+				DEDDEF921A5442F200F6805D /* NLMCTest.m */,
+				DEDDEF891A542CE800F6805D /* CollectionMethod.h */,
+				DEDDEF8A1A542CE800F6805D /* CollectionMethod.m */,
+				DEDDEF851A542CE800F6805D /* CollectionSpecimen.h */,
+				DEDDEF861A542CE800F6805D /* CollectionSpecimen.m */,
+				DE7B631A1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.h */,
+				DE7B631B1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m */,
+				DE7B63131A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.h */,
+				DE7B63141A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m */,
 				DE0432BF1A35C74D00F09F4C /* NSString+CSVUtils.h */,
 				DE0432C01A35C74D00F09F4C /* NSString+CSVUtils.m */,
 				DE0432BB1A35047200F09F4C /* CWFileUtilities.h */,
@@ -302,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE04329B1A35023600F09F4C /* Images.xcassets in Resources */,
+				DEA102BD1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml in Resources */,
 				DE04329E1A35023600F09F4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA102BE1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,17 +408,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE0432EF1A43994800F09F4C /* CollectionMethod.m in Sources */,
 				DE0432BD1A35047200F09F4C /* CWFileUtilities.m in Sources */,
+				DEDDEF931A5442F200F6805D /* NLMCTest.m in Sources */,
 				DE0432961A35023600F09F4C /* CWMainViewController.m in Sources */,
 				DE0432931A35023600F09F4C /* main.m in Sources */,
 				DE0432911A35023600F09F4C /* AppDelegate.m in Sources */,
-				DE0432DC1A3B492000F09F4C /* NLMCTest.m in Sources */,
 				DE0432B91A35026200F09F4C /* CWNLMCFunctions.m in Sources */,
+				DE7B631C1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m in Sources */,
+				DEDDEF831A52FC5E00F6805D /* CWNLMCXMLParser.m in Sources */,
+				DE7B63151A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m in Sources */,
 				DE0432D01A39AA0700F09F4C /* CWMainWindowController.m in Sources */,
 				DE0432C11A35C74D00F09F4C /* NSString+CSVUtils.m in Sources */,
 				DE0432991A35023600F09F4C /* NLMC.xcdatamodeld in Sources */,
-				DE0432EC1A43994700F09F4C /* CollectionSpecimen.m in Sources */,
+				DEDDEF8B1A542CE800F6805D /* CollectionMethod.m in Sources */,
+				DEDDEF871A542CE800F6805D /* CollectionSpecimen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,12 +429,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE0432AA1A35023600F09F4C /* NLMCTests.m in Sources */,
 				DE0432C21A35C74D00F09F4C /* NSString+CSVUtils.m in Sources */,
 				DE0432BA1A35026200F09F4C /* CWNLMCFunctions.m in Sources */,
 				DE0432D11A39AA0700F09F4C /* CWMainWindowController.m in Sources */,
 				DE0432BE1A35047200F09F4C /* CWFileUtilities.m in Sources */,
-				DE0432DD1A3B492000F09F4C /* NLMCTest.m in Sources */,
+				DE7B63121A4701CB00D6A0E1 /* CWNLMCEntityTest.m in Sources */,
+				DEDDEF941A5442F200F6805D /* NLMCTest.m in Sources */,
+				DEDDEF841A52FC5E00F6805D /* CWNLMCXMLParser.m in Sources */,
+				DE7B631D1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m in Sources */,
+				DEDDEF881A542CE800F6805D /* CollectionSpecimen.m in Sources */,
+				DEDDEF8C1A542CE800F6805D /* CollectionMethod.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,14 +545,14 @@
 			baseConfigurationReference = E4562A5AB38E92A1C4D20ECC /* Pods-NLMC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/cwebster/Downloads/iOSCoreDataTest-iOS8/iOSSQLiteCoreDataTest1111-iOS8",
-				);
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = NLMC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NLMC/NLMC-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -529,14 +561,13 @@
 			baseConfigurationReference = 02A65C07B594197232ECEBE8 /* Pods-NLMC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Users/cwebster/Downloads/iOSCoreDataTest-iOS8/iOSSQLiteCoreDataTest1111-iOS8",
-				);
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = NLMC/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NLMC/NLMC-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -545,6 +576,7 @@
 			baseConfigurationReference = 5FB01A7698DA3C5E339C466A /* Pods-NLMCTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -557,6 +589,8 @@
 				INFOPLIST_FILE = NLMCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NLMC/NLMCTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NLMC.app/Contents/MacOS/NLMC";
 			};
 			name = Debug;
@@ -566,6 +600,7 @@
 			baseConfigurationReference = 8F33A653EEAFBC40F6EA7FBF /* Pods-NLMCTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
@@ -574,6 +609,7 @@
 				INFOPLIST_FILE = NLMCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NLMC/NLMCTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NLMC.app/Contents/MacOS/NLMC";
 			};
 			name = Release;

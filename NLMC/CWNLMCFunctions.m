@@ -100,7 +100,6 @@
     if ([elementName isEqualToString:@"Discipline"]) {
         // Need to do something?
         self.currentTest.catalogueVersion = self.catalogueVersion;
-        self.currentTest.collectionMethod = self.collectionMethodSet;
         self.currentTest.collectionSpecimen = self.collectionSpecimenSet;
 
         //[self.moc MR_saveOnlySelfAndWait];
