@@ -70,7 +70,6 @@ static NSString *kName_Discipline_name = @"name";
                         TBXMLElement *NLMC_ID = [TBXML childElementNamed:kName_NLMC_ID parentElement:NLMC_Test];
                         
                         if (NLMC_ID != nil) {
-                            
                             // Set the ID
                             newTest.nlmcID = [TBXML textForElement:NLMC_ID];
                             
@@ -135,8 +134,7 @@ static NSString *kName_Discipline_name = @"name";
                                 }
                                 
                                 [newCollectionSpecimen addCollectionMethodsRelationship:collectionMethodSet];
-                                
-                                //newCollectionSpecimen.collectionMethodsRelationship = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:collectionMethodSet]];
+
                                 [collectionSpecimenSet addObject:newCollectionSpecimen];
                                 
                                 CollectedSpecimenElement = [TBXML nextSiblingNamed:kName_CollectedSpecimen searchFromElement:CollectedSpecimenElement];
@@ -228,10 +226,12 @@ static NSString *kName_Discipline_name = @"name";
                         }
                         
                         
-                        // [self performSelectorOnMainThread:@selector(parsedSong:) withObject:song waitUntilDone:NO];
-                        // performSelectorOnMainThread: will retain the object until the selector has been performed
-                        // so we can release our reference
-                        // [song release];
+                        // All things have been set
+                        // check to see if test already in data base
+                        // match on ID, version number and date updated, if already present dont sav
+   
+                        [moc MR_saveOnlySelfAndWait];
+                        
                         NLMC_Test = [TBXML nextSiblingNamed:kName_NLMC_Test searchFromElement:NLMC_Test];
                     }
                 }

@@ -19,9 +19,9 @@
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     // NSLog(@"Object at index: %@", [self.currentCollectionMethodsArray objectAtIndex:row]);
     
-    CollectionMethod *currentEntity = [self.currentCollectionMethodsArray objectAtIndex:row];
-    return currentEntity.method;
-    
+   // CollectionMethod *currentEntity = [self.currentCollectionMethodsArray objectAtIndex:row];
+   // return currentEntity.method;
+    return nil;
     //return [self.currentCollectionMethodsArray objectAtIndex:row];
     
 }
@@ -30,6 +30,9 @@
     
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
+    NSLog(@"Row changed");
+}
 
 
 

@@ -16,6 +16,7 @@
     <entity name="NLMCTest" representedClassName="NLMCTest" syncable="YES">
         <attribute name="alternateTestNames" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="catalogueVersion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="collectionMethod" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="discipline" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="displayName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="firstPublishedVersion" optional="YES" attributeType="String" syncable="YES"/>
@@ -31,6 +32,6 @@
     <elements>
         <element name="CollectionMethod" positionX="-45" positionY="54" width="128" height="90"/>
         <element name="CollectionSpecimen" positionX="-63" positionY="-18" width="128" height="133"/>
-        <element name="NLMCTest" positionX="-54" positionY="-9" width="128" height="238"/>
+        <element name="NLMCTest" positionX="-54" positionY="-9" width="128" height="255"/>
     </elements>
 </model>

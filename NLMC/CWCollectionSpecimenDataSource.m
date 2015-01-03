@@ -29,4 +29,8 @@
     
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
+    NSLog(@"Row changed");
+}
+
 @end
