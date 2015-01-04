@@ -20,8 +20,14 @@
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"MyDatabase.sqlite"];
     self.moc = [NSManagedObjectContext MR_contextForCurrentThread];
 
-    // Register Observer for Main table change
-    [self.nlmcArrayController addObserver:self forKeyPath:@"selection" options:0 context:nil];
+    // Register Observers for table changes
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(collectedSpecimenstableViewSelectionDidChange:)
+     name:NSTableViewSelectionDidChangeNotification object:self.collectionSpecimensTableView];
+    
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(nlmcTestTableViewSelectionDidChange:)
+     name:NSTableViewSelectionDidChangeNotification object:self.nlmcTestTableView];
 
     //init a datasources for sub tables
     self.collectionMethodsDataSource = [[CWCollectionMethodsTableViewDataSource alloc] init];
@@ -30,31 +36,45 @@
     [self.collectionSpecimensTableView setDataSource:self.collectionSpecimensDataSource];
     [self.collectionMethodsTableView setDataSource:self.collectionMethodsDataSource];
 
-    // Do any additional setup after loading the view.
 }
+
+-(void)nlmcTestTableViewSelectionDidChange:(NSNotification *)notification
+{
+    //up date sub tables on table change
+    self.collectionSpecimensDataSource.currentSpecimensMethodsArray = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionSpecimen"] allObjects]];;
+    
+    // Reload New Data
+    [self.collectionSpecimensTableView reloadData];
+    
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+    [self.collectionSpecimensTableView selectRowIndexes:indexSet byExtendingSelection:NO];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionDidChangeNotification
+                                                        object:self.collectionSpecimensTableView
+                                                      userInfo:nil];
+    
+}
+
+-(void)collectedSpecimenstableViewSelectionDidChange:(NSNotification *)notification
+{
+    // update collection methods for selected specimen type
+    NSInteger row = [self.collectionSpecimensTableView selectedRow];
+    
+    if (self.collectionSpecimensDataSource.currentSpecimensMethodsArray .count > row) {
+        CollectionSpecimen *currentSpecimenCollection = [self.collectionSpecimensDataSource.currentSpecimensMethodsArray objectAtIndex:row];
+    NSSet *methods = currentSpecimenCollection.collectionMethodsRelationship;
+    self.collectionMethodsDataSource.currentCollectionMethodsArray = [methods allObjects];
+    [self.collectionMethodsTableView reloadData];
+    
+    }
+}
+
 
 - (void)setRepresentedObject:(id)representedObject
 {
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
-}
-
-- (void)observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object change:(NSDictionary*)change context:(void*)context
-{
-
-    if ([keyPath isEqualToString:@"selection"]) {
-        // Update the datasource arrays for Collection Methods and Collection Specimens
-        self.currentCollectionMethods = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionMethod"] allObjects]];
-        self.collectionMethodsDataSource.currentCollectionMethodsArray = self.currentCollectionMethods;
-
-        self.currentCollectionSpecimens = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionSpecimen"] allObjects]];
-        self.collectionSpecimensDataSource.currentSpecimensMethodsArray = self.currentCollectionSpecimens;
-
-        // Reload New Data
-        [self.collectionMethodsTableView reloadData];
-        [self.collectionSpecimensTableView reloadData];
-    }
 }
 
 - (IBAction)createTestNames:(id)sender

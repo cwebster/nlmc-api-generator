@@ -17,13 +17,13 @@
 }
 
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
-    // NSLog(@"Object at index: %@", [self.currentCollectionMethodsArray objectAtIndex:row]);
     
-   // CollectionMethod *currentEntity = [self.currentCollectionMethodsArray objectAtIndex:row];
-   // return currentEntity.method;
-    return nil;
-    //return [self.currentCollectionMethodsArray objectAtIndex:row];
-    
+    if(self.currentCollectionMethodsArray.count>row){
+        CollectionMethod *currentEntity = [self.currentCollectionMethodsArray objectAtIndex:row];
+        return currentEntity.method;
+    } else {
+        return nil;
+    }
 }
 
 -(void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
@@ -31,7 +31,7 @@
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
-    NSLog(@"Row changed");
+
 }
 
 
