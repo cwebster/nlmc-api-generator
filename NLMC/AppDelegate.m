@@ -18,11 +18,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification*)aNotification
 {
     // Insert code here to initialize your application
-    // [MagicalRecord setupCoreDataStack];
-    // [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"MyDatabase.sqlite"];
 
-    //    NSManagedObjectContext* defaultContext = [NSManagedObjectContext MR_newMainQueueContext];
-    //    self.managedObjectContext = defaultContext;
+    
+    
 }
 
 - (void)applicationWillTerminate:(NSNotification*)aNotification

@@ -832,7 +832,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SPq-eH-Za9">
-                                <rect key="frame" x="427" y="243" width="101" height="39"/>
+                                <rect key="frame" x="268" y="215" width="101" height="39"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Catalog Version" id="UJC-Zx-fn8">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -871,26 +871,31 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Buk-Tm-aWu">
-                                <rect key="frame" x="427" y="290" width="83" height="17"/>
+                                <rect key="frame" x="268" y="262" width="83" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Discipline" id="EeY-4g-GqS">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Qc-YF-uJd">
-                                <rect key="frame" x="532" y="290" width="204" height="17"/>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Qc-YF-uJd">
+                                <rect key="frame" x="355" y="262" width="204" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="hMR-eA-vi4">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <binding destination="fx1-to-Ib6" name="value" keyPath="selection.discipline" id="NLK-5l-TeI"/>
+                                    <binding destination="fx1-to-Ib6" name="value" keyPath="selection.discipline" id="0QS-vb-Nj8">
+                                        <dictionary key="options">
+                                            <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
+                                        </dictionary>
+                                    </binding>
+                                    <outlet property="delegate" destination="XfG-lQ-9wD" id="PP1-pb-JxX"/>
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-qw-tky">
-                                <rect key="frame" x="532" y="254" width="150" height="17"/>
+                                <rect key="frame" x="373" y="237" width="150" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="QnF-EC-59l">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1001,11 +1006,39 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMY-My-FgQ">
+                                <rect key="frame" x="355" y="262" width="134" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Clinical Biochemistry" id="cya-EH-klx">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uMg-vQ-kBH">
+                                <rect key="frame" x="493" y="262" width="80" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Immunology" id="mrG-tl-OfY">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ATP-yb-Blw">
+                                <rect key="frame" x="577" y="262" width="86" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Haematology" id="cQl-ye-w4o">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="chemistryTextField" destination="wMY-My-FgQ" id="eKJ-LV-6GO"/>
                         <outlet property="collectionMethodsTableView" destination="kaJ-Q5-UT2" id="anT-ZP-VrY"/>
                         <outlet property="collectionSpecimensTableView" destination="4QT-xc-S7n" id="SbY-n3-rG9"/>
+                        <outlet property="disciplineTextField" destination="3Qc-YF-uJd" id="c3e-76-DMa"/>
+                        <outlet property="haematologyTextField" destination="ATP-yb-Blw" id="JsB-bs-z2U"/>
+                        <outlet property="immunologyTextField" destination="uMg-vQ-kBH" id="x35-DL-ryN"/>
                         <outlet property="nlmcArrayController" destination="fx1-to-Ib6" id="iME-FC-H6c"/>
                         <outlet property="nlmcTestTableView" destination="en1-Td-dsx" id="rfe-ch-21U"/>
                         <outlet property="specimensArrayController" destination="UUq-hO-TMn" id="Cew-e5-5ke"/>

@@ -10,7 +10,7 @@
 #import "CWNLMCFunctions.h"
 #import "CWFileUtilities.h"
 
-@implementation CWMainViewController
+@implementation CWMainViewController 
 
 - (void)viewDidLoad
 {
@@ -28,6 +28,7 @@
     [[NSNotificationCenter defaultCenter]
      addObserver:self selector:@selector(nlmcTestTableViewSelectionDidChange:)
      name:NSTableViewSelectionDidChangeNotification object:self.nlmcTestTableView];
+
 
     //init a datasources for sub tables
     self.collectionMethodsDataSource = [[CWCollectionMethodsTableViewDataSource alloc] init];
@@ -48,6 +49,7 @@
     
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
     [self.collectionSpecimensTableView selectRowIndexes:indexSet byExtendingSelection:NO];
+    [self createDisciplinesFromJsonString];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionDidChangeNotification
                                                         object:self.collectionSpecimensTableView
@@ -69,6 +71,66 @@
     }
 }
 
+- (void)createDisciplinesFromJsonString {
+    
+    NSString* str = [self.disciplineTextField stringValue];
+    NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    
+    [self.immunologyTextField setHidden:YES];
+    [self.chemistryTextField setHidden:YES];
+    [self.haematologyTextField setHidden:YES];
+    
+    id disciplineData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    
+    if(error) { /* JSON was malformed, act appropriately here */ }
+    
+    // the originating poster wants to deal with dictionaries;
+    // assuming you do too then something like this is the first
+    // validation step:
+    if([disciplineData isKindOfClass:[NSDictionary class]])
+    {
+       NSDictionary *results = disciplineData;
+        
+        [results enumerateKeysAndObjectsUsingBlock: ^(id key, id obj, BOOL *stop) {
+            // do something with key and obj
+            if ([obj isEqualToString:@"Immunology"]) {
+                NSLog(@"Immunology" );
+                [self.immunologyTextField setHidden:NO];
+                [self.immunologyTextField setBackgroundColor:[NSColor blueColor]];
+                [self.immunologyTextField setDrawsBackground:YES];
+            } else if ([obj isEqualToString:@"Clinical Biochemistry"]) {
+                NSLog(@"Clinical Biochemistry" );
+                [self.chemistryTextField setHidden:NO];
+                [self.chemistryTextField setBackgroundColor:[NSColor greenColor]];
+                [self.chemistryTextField setDrawsBackground:YES];
+            } else if ([obj isEqualToString:@"Haematology"]){
+               NSLog(@"Haematology");
+                [self.haematologyTextField setHidden:NO];
+                [self.haematologyTextField setBackgroundColor:[NSColor redColor]];
+                [self.haematologyTextField setDrawsBackground:YES];
+            }
+            
+         
+            
+        }];
+        
+        /* proceed with results as you like; the assignment to
+         an explicit NSDictionary * is artificial step to get
+         compile-time checking from here on down (and better autocompletion
+         when editing). You could have just made object an NSDictionary *
+         in the first place but stylistically you might prefer to keep
+         the question of type open until it's confirmed */
+    }
+    else
+    {
+        /* there's no guarantee that the outermost object in a JSON
+         packet will be a dictionary; if we get here then it wasn't,
+         so 'object' shouldn't be treated as an NSDictionary; probably
+         you need to report a suitable error condition */
+    }
+
+}
 
 - (void)setRepresentedObject:(id)representedObject
 {
