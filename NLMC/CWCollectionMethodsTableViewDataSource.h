@@ -10,6 +10,6 @@
 
 @interface CWCollectionMethodsTableViewDataSource :  NSObject <NSTableViewDataSource, NSTableViewDelegate>
 
-@property (strong, readwrite) NSMutableArray *currentCollectionMethodsArray;
+@property (strong, readwrite) NSArray *currentCollectionMethodsArray;
 
 @end

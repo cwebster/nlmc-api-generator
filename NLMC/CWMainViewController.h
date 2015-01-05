@@ -11,18 +11,20 @@
 #import "CWCollectionSpecimenDataSource.h"
 #import "CWNLMCXMLParser.h"
 
-@interface CWMainViewController : NSViewController
+@interface CWMainViewController : NSViewController <NSTextFieldDelegate>
 
 @property NSManagedObjectContext* moc;
-@property (nonatomic, strong) IBOutlet NSTableView* nlmcTableView;
+
 @property (nonatomic, strong) IBOutlet NSArrayController* nlmcArrayController;
-@property (nonatomic, strong) NSMutableArray* currentCollectionMethods;
-@property (nonatomic, strong) NSMutableArray* currentCollectionSpecimens;
 @property (nonatomic, strong) CWCollectionMethodsTableViewDataSource *collectionMethodsDataSource;
 @property (nonatomic, strong) CWCollectionSpecimenDataSource *collectionSpecimensDataSource;
 @property (nonatomic, strong) IBOutlet NSTableView *collectionMethodsTableView;
 @property (nonatomic, strong) IBOutlet NSTableView *collectionSpecimensTableView;
-
+@property (nonatomic, strong) IBOutlet NSTableView *nlmcTestTableView;
+@property (nonatomic, strong) IBOutlet NSTextField *chemistryTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *haematologyTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *immunologyTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *disciplineTextField;
 
 - (IBAction)parseNLMCXML:(id)sender;
 - (IBAction)createTestNames:(id)sender;
