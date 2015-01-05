@@ -8,6 +8,7 @@
 
 #import "CWMainWindowController.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
+#import "CWNLMCXMLParser.h"
 
 @interface CWMainWindowController ()
 
@@ -19,14 +20,50 @@
 {
     [super windowDidLoad];
     
-    //self.moc = [NSManagedObjectContext MR_contextForCurrentThread];
+    self.moc = [NSManagedObjectContext MR_contextForCurrentThread];
 
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    NSLog(@"vc = %@", self.contentViewController);
+    
 }
 
 - (void)awakeFromNib {
     
    
+}
+
+- (IBAction)parseNLMCXML:(id)sender {
+    
+
+    NSOpenPanel* tvarNSOpenPanelObj = [NSOpenPanel openPanel];
+    NSInteger tvarNSInteger = [tvarNSOpenPanelObj runModal];
+    if (tvarNSInteger == NSModalResponseOK) {
+        
+    }
+    else if (tvarNSInteger == NSModalResponseCancel) {
+        
+        return;
+    }
+    else {
+        
+        return;
+    } // end if
+    
+    NSURL* tvarFilename = [tvarNSOpenPanelObj URL];
+
+    [NSApp endSheet:tvarNSOpenPanelObj];
+    [tvarNSOpenPanelObj orderOut:self];
+    [tvarNSOpenPanelObj close];
+    
+    [CWNLMCXMLParser parseXMLFile:tvarFilename];
+    
+
+}
+
+- (IBAction)emptyDatabase:(id)sender {
+    
+    [NLMCTest MR_truncateAll];
+    
 }
 
 @end

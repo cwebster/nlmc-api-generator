@@ -77,9 +77,12 @@
     NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error = nil;
     
-    [self.immunologyTextField setHidden:YES];
-    [self.chemistryTextField setHidden:YES];
-    [self.haematologyTextField setHidden:YES];
+    [self.immunologyTextField setBackgroundColor:[NSColor clearColor]];
+    [self.immunologyTextField setDrawsBackground:YES];
+    [self.chemistryTextField setBackgroundColor:[NSColor clearColor]];
+    [self.chemistryTextField setDrawsBackground:YES];
+    [self.haematologyTextField setBackgroundColor:[NSColor clearColor]];
+    [self.haematologyTextField setDrawsBackground:YES];
     
     id disciplineData = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     
@@ -95,19 +98,17 @@
         [results enumerateKeysAndObjectsUsingBlock: ^(id key, id obj, BOOL *stop) {
             // do something with key and obj
             if ([obj isEqualToString:@"Immunology"]) {
-                NSLog(@"Immunology" );
                 [self.immunologyTextField setHidden:NO];
-                [self.immunologyTextField setBackgroundColor:[NSColor blueColor]];
+                [self.immunologyTextField setBackgroundColor:[NSColor colorWithRed:0.183 green:0.56 blue:0.75 alpha:1]];
                 [self.immunologyTextField setDrawsBackground:YES];
+                
             } else if ([obj isEqualToString:@"Clinical Biochemistry"]) {
-                NSLog(@"Clinical Biochemistry" );
                 [self.chemistryTextField setHidden:NO];
-                [self.chemistryTextField setBackgroundColor:[NSColor greenColor]];
+                [self.chemistryTextField setBackgroundColor:[NSColor colorWithRed:0.183 green:0.74 blue:0.25 alpha:1]];
                 [self.chemistryTextField setDrawsBackground:YES];
             } else if ([obj isEqualToString:@"Haematology"]){
-               NSLog(@"Haematology");
                 [self.haematologyTextField setHidden:NO];
-                [self.haematologyTextField setBackgroundColor:[NSColor redColor]];
+                [self.haematologyTextField setBackgroundColor:[NSColor colorWithHue:0.02 saturation:0.76 brightness:0.88 alpha:1]];
                 [self.haematologyTextField setDrawsBackground:YES];
             }
             
@@ -139,62 +140,6 @@
     // Update the view, if already loaded.
 }
 
-- (IBAction)createTestNames:(id)sender
-{
 
-}
-
-- (IBAction)parseNLMCXML:(id)sender
-{
-    NSLog(@"doOpen");
-    NSOpenPanel* tvarNSOpenPanelObj = [NSOpenPanel openPanel];
-    NSInteger tvarNSInteger = [tvarNSOpenPanelObj runModal];
-    if (tvarNSInteger == NSModalResponseOK) {
-        NSLog(@"doOpen we have an OK button");
-    }
-    else if (tvarNSInteger == NSModalResponseCancel) {
-        NSLog(@"doOpen we have a Cancel button");
-        return;
-    }
-    else {
-        NSLog(@"doOpen tvarInt not equal 1 or zero = %3ld", (long)tvarNSInteger);
-        return;
-    } // end if
-
-    NSURL* tvarFilename = [tvarNSOpenPanelObj URL];
-    NSLog(@"doOpen filename = %@", tvarFilename);
-
-    CWNLMCFunctions* Parser = [[CWNLMCFunctions alloc] init];
-
-    [Parser parseXMLFile:tvarFilename];
-}
-
-
-- (IBAction)parseXMLusingDom:(id)sender
-{
-    NSLog(@"doOpen");
-    NSOpenPanel* tvarNSOpenPanelObj = [NSOpenPanel openPanel];
-    NSInteger tvarNSInteger = [tvarNSOpenPanelObj runModal];
-    if (tvarNSInteger == NSModalResponseOK) {
-        NSLog(@"doOpen we have an OK button");
-    }
-    else if (tvarNSInteger == NSModalResponseCancel) {
-        NSLog(@"doOpen we have a Cancel button");
-        return;
-    }
-    else {
-        NSLog(@"doOpen tvarInt not equal 1 or zero = %3ld", (long)tvarNSInteger);
-        return;
-    } // end if
-    
-    NSURL* tvarFilename = [tvarNSOpenPanelObj URL];
-    NSLog(@"doOpen filename = %@", tvarFilename);
-    
-    [CWNLMCXMLParser parseXMLFile:tvarFilename];
-}
-
-- (IBAction)jsonNLMC:(id)sender
-{
-}
 
 @end

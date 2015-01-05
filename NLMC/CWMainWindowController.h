@@ -12,5 +12,8 @@
 
 @property NSManagedObjectContext *moc;
 
+- (IBAction)parseNLMCXML:(id)sender;
+- (IBAction)emptyDatabase:(id)sender;
+
 
 @end

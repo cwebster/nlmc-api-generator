@@ -26,10 +26,5 @@
 @property (nonatomic, strong) IBOutlet NSTextField *immunologyTextField;
 @property (nonatomic, strong) IBOutlet NSTextField *disciplineTextField;
 
-- (IBAction)parseNLMCXML:(id)sender;
-- (IBAction)createTestNames:(id)sender;
-- (IBAction)parseXMLusingDom:(id)sender;
-
-- (IBAction)jsonNLMC:(id)sender;
 
 @end

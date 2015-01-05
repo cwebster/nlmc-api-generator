@@ -13,7 +13,6 @@
 		DE0432931A35023600F09F4C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432921A35023600F09F4C /* main.m */; };
 		DE0432961A35023600F09F4C /* CWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432951A35023600F09F4C /* CWMainViewController.m */; };
 		DE0432991A35023600F09F4C /* NLMC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */; };
-		DE04329B1A35023600F09F4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE04329A1A35023600F09F4C /* Images.xcassets */; };
 		DE04329E1A35023600F09F4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE04329C1A35023600F09F4C /* Main.storyboard */; };
 		DE0432B91A35026200F09F4C /* CWNLMCFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */; };
 		DE0432BA1A35026200F09F4C /* CWNLMCFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */; };
@@ -23,6 +22,14 @@
 		DE0432C21A35C74D00F09F4C /* NSString+CSVUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432C01A35C74D00F09F4C /* NSString+CSVUtils.m */; };
 		DE0432D01A39AA0700F09F4C /* CWMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */; };
 		DE0432D11A39AA0700F09F4C /* CWMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */; };
+		DE1C08E51A5ABA320091705A /* CWRoundedTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C08E41A5ABA320091705A /* CWRoundedTextFieldCell.m */; };
+		DE1C08E61A5ABA320091705A /* CWRoundedTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C08E41A5ABA320091705A /* CWRoundedTextFieldCell.m */; };
+		DE1C08EC1A5AE36A0091705A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1C08EB1A5AE36A0091705A /* Images.xcassets */; };
+		DE1C08ED1A5AE36A0091705A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE1C08EB1A5AE36A0091705A /* Images.xcassets */; };
+		DE1C08FF1A5AE68D0091705A /* CWImportWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C08FD1A5AE68D0091705A /* CWImportWindowController.m */; };
+		DE1C09001A5AE68D0091705A /* CWImportWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE1C08FD1A5AE68D0091705A /* CWImportWindowController.m */; };
+		DE1C09011A5AE68D0091705A /* CWImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1C08FE1A5AE68D0091705A /* CWImportWindowController.xib */; };
+		DE1C09021A5AE68D0091705A /* CWImportWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE1C08FE1A5AE68D0091705A /* CWImportWindowController.xib */; };
 		DE7B63121A4701CB00D6A0E1 /* CWNLMCEntityTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7B63111A4701CB00D6A0E1 /* CWNLMCEntityTest.m */; };
 		DE7B63151A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7B63141A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m */; };
 		DE7B631C1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7B631B1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m */; };
@@ -63,7 +70,6 @@
 		DE0432941A35023600F09F4C /* CWMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWMainViewController.h; sourceTree = "<group>"; };
 		DE0432951A35023600F09F4C /* CWMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWMainViewController.m; sourceTree = "<group>"; };
 		DE0432981A35023600F09F4C /* NLMC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NLMC.xcdatamodel; sourceTree = "<group>"; };
-		DE04329A1A35023600F09F4C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE04329D1A35023600F09F4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE0432A31A35023600F09F4C /* NLMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NLMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0432A81A35023600F09F4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +82,12 @@
 		DE0432CE1A39AA0700F09F4C /* CWMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWMainWindowController.h; sourceTree = "<group>"; };
 		DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWMainWindowController.m; sourceTree = "<group>"; };
 		DE0432E21A42328800F09F4C /* XXXProbeIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XXXProbeIOS.framework; path = "../../Downloads/iOSCoreDataTest-iOS8/iOSSQLiteCoreDataTest1111-iOS8/XXXProbeIOS.framework"; sourceTree = "<group>"; };
+		DE1C08E31A5ABA320091705A /* CWRoundedTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWRoundedTextFieldCell.h; sourceTree = "<group>"; };
+		DE1C08E41A5ABA320091705A /* CWRoundedTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWRoundedTextFieldCell.m; sourceTree = "<group>"; };
+		DE1C08EB1A5AE36A0091705A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE1C08FC1A5AE68D0091705A /* CWImportWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWImportWindowController.h; sourceTree = "<group>"; };
+		DE1C08FD1A5AE68D0091705A /* CWImportWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWImportWindowController.m; sourceTree = "<group>"; };
+		DE1C08FE1A5AE68D0091705A /* CWImportWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CWImportWindowController.xib; sourceTree = "<group>"; };
 		DE7B63111A4701CB00D6A0E1 /* CWNLMCEntityTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWNLMCEntityTest.m; sourceTree = "<group>"; };
 		DE7B63131A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWCollectionMethodsTableViewDataSource.h; sourceTree = "<group>"; };
 		DE7B63141A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWCollectionMethodsTableViewDataSource.m; sourceTree = "<group>"; };
@@ -151,7 +163,6 @@
 				DE0432C31A35D7D500F09F4C /* Models */,
 				DE04328F1A35023600F09F4C /* AppDelegate.h */,
 				DE0432901A35023600F09F4C /* AppDelegate.m */,
-				DE04329A1A35023600F09F4C /* Images.xcassets */,
 				DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */,
 				DE04328D1A35023600F09F4C /* Supporting Files */,
 				DEDDEF811A52FC5E00F6805D /* CWNLMCXMLParser.h */,
@@ -163,6 +174,7 @@
 		DE04328D1A35023600F09F4C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C08EB1A5AE36A0091705A /* Images.xcassets */,
 				DE04328E1A35023600F09F4C /* Info.plist */,
 				DE0432921A35023600F09F4C /* main.m */,
 			);
@@ -213,6 +225,9 @@
 		DE0432C41A35D7DD00F09F4C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C08E31A5ABA320091705A /* CWRoundedTextFieldCell.h */,
+				DE1C08E41A5ABA320091705A /* CWRoundedTextFieldCell.m */,
+				DE1C08FE1A5AE68D0091705A /* CWImportWindowController.xib */,
 				DE04329C1A35023600F09F4C /* Main.storyboard */,
 			);
 			name = Views;
@@ -225,6 +240,8 @@
 				DE0432951A35023600F09F4C /* CWMainViewController.m */,
 				DE0432CE1A39AA0700F09F4C /* CWMainWindowController.h */,
 				DE0432CF1A39AA0700F09F4C /* CWMainWindowController.m */,
+				DE1C08FC1A5AE68D0091705A /* CWImportWindowController.h */,
+				DE1C08FD1A5AE68D0091705A /* CWImportWindowController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -324,8 +341,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE04329B1A35023600F09F4C /* Images.xcassets in Resources */,
+				DE1C08EC1A5AE36A0091705A /* Images.xcassets in Resources */,
 				DEA102BD1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml in Resources */,
+				DE1C09011A5AE68D0091705A /* CWImportWindowController.xib in Resources */,
 				DE04329E1A35023600F09F4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +353,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA102BE1A52F99B0057A30B /* NLMC_Live_Apr_2014_release4_0.xml in Resources */,
+				DE1C09021A5AE68D0091705A /* CWImportWindowController.xib in Resources */,
+				DE1C08ED1A5AE36A0091705A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +434,7 @@
 				DE0432931A35023600F09F4C /* main.m in Sources */,
 				DE0432911A35023600F09F4C /* AppDelegate.m in Sources */,
 				DE0432B91A35026200F09F4C /* CWNLMCFunctions.m in Sources */,
+				DE1C08FF1A5AE68D0091705A /* CWImportWindowController.m in Sources */,
 				DE7B631C1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m in Sources */,
 				DEDDEF831A52FC5E00F6805D /* CWNLMCXMLParser.m in Sources */,
 				DE7B63151A52AC0400D6A0E1 /* CWCollectionMethodsTableViewDataSource.m in Sources */,
@@ -422,6 +443,7 @@
 				DE0432991A35023600F09F4C /* NLMC.xcdatamodeld in Sources */,
 				DEDDEF8B1A542CE800F6805D /* CollectionMethod.m in Sources */,
 				DEDDEF871A542CE800F6805D /* CollectionSpecimen.m in Sources */,
+				DE1C08E51A5ABA320091705A /* CWRoundedTextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +461,8 @@
 				DE7B631D1A52C94100D6A0E1 /* CWCollectionSpecimenDataSource.m in Sources */,
 				DEDDEF881A542CE800F6805D /* CollectionSpecimen.m in Sources */,
 				DEDDEF8C1A542CE800F6805D /* CollectionMethod.m in Sources */,
+				DE1C09001A5AE68D0091705A /* CWImportWindowController.m in Sources */,
+				DE1C08E61A5ABA320091705A /* CWRoundedTextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

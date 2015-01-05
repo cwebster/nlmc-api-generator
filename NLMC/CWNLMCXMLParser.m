@@ -7,6 +7,7 @@
 //
 
 #import "CWNLMCXMLParser.h"
+#import "CWImportWindowController.h"
 
 @implementation CWNLMCXMLParser
 
@@ -41,6 +42,10 @@ static NSString *kName_Discipline_name = @"name";
 
 + (void)parseXMLFile:(NSURL*)pathToFile {
     
+    CWImportWindowController *importProgressWindow = [[CWImportWindowController alloc]initWithWindowNibName:@"CWImportWindowController"];
+    [importProgressWindow.window display];
+    [importProgressWindow.window makeKeyAndOrderFront:self];
+    
     NSError *error;
     NSData * data = [NSData dataWithContentsOfURL:pathToFile];
     TBXML * tbxml = [TBXML tbxmlWithXMLData:data error:&error];
@@ -54,6 +59,26 @@ static NSString *kName_Discipline_name = @"name";
         if (tbxml.rootXMLElement) {
             
             TBXMLElement *root = tbxml.rootXMLElement;
+            
+            if (root) {
+                TBXMLElement * NLMC_Test = [TBXML childElementNamed:kName_NLMC_Test parentElement:root];
+                
+                if (NLMC_Test) {
+                    int i = 0;
+                    
+                    while (NLMC_Test != nil) {
+                        i++;
+                        NLMC_Test = [TBXML nextSiblingNamed:kName_NLMC_Test searchFromElement:NLMC_Test];
+                    }
+                
+                
+                [importProgressWindow.progressTextField setStringValue:@"Importing Records"];
+                [importProgressWindow.importProgressIndicator setMaxValue:i];
+                [importProgressWindow.window display];
+                }
+            }
+            
+            
             if (root) {
                 TBXMLElement * NLMC_Test = [TBXML childElementNamed:kName_NLMC_Test parentElement:root];
                 
@@ -61,7 +86,7 @@ static NSString *kName_Discipline_name = @"name";
                 NSManagedObjectContext *moc = [NSManagedObjectContext MR_contextForCurrentThread];
                 
                 if (NLMC_Test) {
-                    
+                   
                     while (NLMC_Test != nil) {
                         
                         NLMCTest* newTest = [NLMCTest MR_createInContext:moc];
@@ -229,8 +254,21 @@ static NSString *kName_Discipline_name = @"name";
                         // All things have been set
                         // check to see if test already in data base
                         // match on ID, version number and date updated, if already present dont sav
-   
-                        [moc MR_saveOnlySelfAndWait];
+                        
+                        if ([self isTestAlreadyImported:newTest]) {
+                            NSLog(@"Saving");
+                            [moc MR_saveOnlySelfAndWait];
+                        } else {
+                            // NSLog(@"Already in database not saving");
+                        }
+                        
+                        
+                        // [moc MR_saveOnlySelfAndWait];
+                        [importProgressWindow.importProgressIndicator incrementBy:1];
+                        [importProgressWindow.window display];
+                        
+                        
+                        
                         
                         NLMC_Test = [TBXML nextSiblingNamed:kName_NLMC_Test searchFromElement:NLMC_Test];
                     }
@@ -242,6 +280,37 @@ static NSString *kName_Discipline_name = @"name";
     }
 }
 
++(BOOL)isTestAlreadyImported:(NLMCTest *) nlmcTestToCheck {
+    
+    NSManagedObjectContext *moc = [NSManagedObjectContext MR_contextForCurrentThread];
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"NLMCTest" inManagedObjectContext:moc];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+    // Set example predicate and sort orderings...
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"(nlmcID = %@) AND (version = %@) AND (lastModified = %@)", nlmcTestToCheck.nlmcID, nlmcTestToCheck.version, nlmcTestToCheck.lastModified];
+    [request setPredicate:predicate];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"nlmcID" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    
+    NSError *error;
+    NSArray *array = [moc executeFetchRequest:request error:&error];
+    
+    if (array == nil)
+    {
+        return TRUE;
+    }
+    
+    return FALSE;
+    
+    
+    
+}
 
 + (void) traverseElement:(TBXMLElement *)element {
     do {
