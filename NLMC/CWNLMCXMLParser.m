@@ -42,34 +42,32 @@ static NSString *kName_Discipline_name = @"name";
 
 + (void)parseXMLFile:(NSURL*)pathToFile {
     
+    //Display Import progress window
     CWImportWindowController *importProgressWindow = [[CWImportWindowController alloc]initWithWindowNibName:@"CWImportWindowController"];
-    NSManagedObjectContext *defaultContext = [NSManagedObjectContext MR_defaultContext];
-   
-    NSLog(@"default context = %@", defaultContext);
-    
-    
     [importProgressWindow.window display];
     [importProgressWindow.window makeKeyAndOrderFront:self];
     
+    //Load XML file into parser
     NSError *error;
     NSData * data = [NSData dataWithContentsOfURL:pathToFile];
-    TBXML * tbxml = [TBXML tbxmlWithXMLData:data error:&error];
     
+    // tbxml is the xml document object
+    TBXML * tbxml = [TBXML tbxmlWithXMLData:data error:&error];
     
     if (error) {
         NSLog(@"%@ %@", [error localizedDescription], [error userInfo]);
         return;
     } else {
     
+        //Set up magical record to do background saves on another thread
+        //Inform OS that we cant sleep
         NSProcessInfo *processInfo = [NSProcessInfo processInfo];
         
         [processInfo disableSuddenTermination];
         [processInfo disableAutomaticTermination:@"Application is currently saving to persistent store"];
         
+        // Start of Magical Record save block and start of processing each XML element
         [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-            
-            
-            NSLog(@"localcontext context = %@", localContext);
             
             // If TBXML found a root node, process element and iterate all children
             if (tbxml.rootXMLElement) {
@@ -80,29 +78,16 @@ static NSString *kName_Discipline_name = @"name";
                     TBXMLElement * NLMC_Test = [TBXML childElementNamed:kName_NLMC_Test parentElement:root];
                     
                     if (NLMC_Test) {
-                        int i = 0;
+                        // Get a count of the total number of records
+                        int j = [self countXMLelementsinTBXMLObject:tbxml parentElement:root childElementName:kName_NLMC_Test];
                         
-                        while (NLMC_Test != nil) {
-                            i++;
-                            NLMC_Test = [TBXML nextSiblingNamed:kName_NLMC_Test searchFromElement:NLMC_Test];
-                        }
-                        
-                        
-                        [importProgressWindow.progressTextField setStringValue:@"Importing Records"];
-                        [importProgressWindow.importProgressIndicator setMaxValue:i];
+                        // Set up date progress bar parameters and display number of records to import
+                        NSString *str = [NSString stringWithFormat:@"Importing : %1$d records", j];
+                        [importProgressWindow.progressTextField setStringValue:str];
+                        [importProgressWindow.importProgressIndicator setMaxValue:j];
                         [importProgressWindow.window display];
-                    }
-                }
-                
-                
-                if (root) {
-                    TBXMLElement * NLMC_Test = [TBXML childElementNamed:kName_NLMC_Test parentElement:root];
-                    
-                    if (NLMC_Test) {
                         
                         while (NLMC_Test != nil) {
-                            
-                            
                             
                             NLMCTest* newTest = [NLMCTest MR_createInContext:localContext];
                             newTest.catalogueVersion = [TBXML valueOfAttributeNamed:kName_NLMC_Catalog_version forElement:root];
@@ -129,41 +114,8 @@ static NSString *kName_Discipline_name = @"name";
                             // Create collection specimen set enclosing a collection methods set
                             TBXMLElement *CollectedSpecimenElement = [TBXML childElementNamed:kName_CollectedSpecimen parentElement:NLMC_Test];
                             if (CollectedSpecimenElement) {
-                                
-                                NSMutableSet *collectionSpecimenSet = [[NSMutableSet alloc]init];
-                               
-                                while (CollectedSpecimenElement != nil) {
-                                    
-                                    NSMutableSet *collectionMethodSet = [[NSMutableSet alloc]init];
-                                    
-                                    CollectionSpecimen* newCollectionSpecimen = [CollectionSpecimen MR_createInContext:localContext];
-                                    
-                                    newCollectionSpecimen.type = [TBXML valueOfAttributeNamed:kName_CollectedSpecimen_type forElement:CollectedSpecimenElement];
-                                    newCollectionSpecimen.snomedConceptID = [TBXML valueOfAttributeNamed:kName_SNOMEDCT_Concept_ID forElement:CollectedSpecimenElement];
-                                    newCollectionSpecimen.topographyRequired = [TBXML valueOfAttributeNamed:kName_CollectedSpecimen_topographyRequired forElement:CollectedSpecimenElement];
-                                    newCollectionSpecimen.morphologyRequired = [TBXML valueOfAttributeNamed:kName_CollectedSpecimen_morphologyRequired forElement:CollectedSpecimenElement];
-
-                                    
-                                    TBXMLElement *CollectionMethodElement = [TBXML childElementNamed:kName_CollectionMethod parentElement:CollectedSpecimenElement];
-                                    while (CollectionMethodElement != nil) {
-                                        
-                                        CollectionMethod* newCollectionMethod = [CollectionMethod MR_createInContext:localContext];
-                                        
-                                        // set the relevant data
-                                        newCollectionMethod.snomedConceptID = [TBXML valueOfAttributeNamed:kName_SNOMEDCT_Concept_ID forElement:CollectionMethodElement];
-                                        newCollectionMethod.method = [TBXML valueOfAttributeNamed:kName_CollectionMethod_method forElement:CollectionMethodElement];
-
-                                        [collectionMethodSet addObject:newCollectionMethod];
-                                        
-                                        CollectionMethodElement = [TBXML nextSiblingNamed:kName_CollectionMethod searchFromElement:CollectionMethodElement];
-                                    }
-                                    
-                                    [newCollectionSpecimen addCollectionMethodsRelationship:collectionMethodSet];
-                                    
-                                    [collectionSpecimenSet addObject:newCollectionSpecimen];
-
-                                    CollectedSpecimenElement = [TBXML nextSiblingNamed:kName_CollectedSpecimen searchFromElement:CollectedSpecimenElement];
-                                }
+                                NSSet *collectionSpecimenSet = [[NSMutableSet alloc]init];
+                                collectionSpecimenSet = [self processCollectionSpecimenElement:CollectedSpecimenElement localContext:localContext];
                                 
                                 [newTest addCollectionSpecimen:collectionSpecimenSet];
                             }
@@ -190,27 +142,10 @@ static NSString *kName_Discipline_name = @"name";
                             // Create a json string of the alternate testnames.
                             TBXMLElement *MetaTestNamesElement = [TBXML childElementNamed:kName_MetaTestNames parentElement:NLMC_TestMetaData];
                             
-                            TBXMLElement *AlternateTestNameElement = [TBXML childElementNamed:kName_MetaTestNames_AlternateTestName parentElement:MetaTestNamesElement];
-                            
+                            // Set Display name
                             newTest.displayName = [TBXML valueOfAttributeNamed:kName_MetaTestNames_displayName forElement:MetaTestNamesElement];
-                            
-                            NSMutableDictionary *alternateTestNamesDictionary = [[NSMutableDictionary alloc]init];
-                            
-                            int idx = 0;
-                            
-                            while (AlternateTestNameElement != nil) {
-                                NSString *keyIdx = [NSString stringWithFormat:@"%d",idx];
-                                [alternateTestNamesDictionary setObject:[TBXML textForElement:AlternateTestNameElement]forKey:keyIdx];
-                                
-                                idx++;
-                                AlternateTestNameElement = [TBXML nextSiblingNamed:kName_MetaTestNames_AlternateTestName searchFromElement:AlternateTestNameElement];
-                            }
-                            
-                            NSError *error;
-                            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:alternateTestNamesDictionary
-                                                                               options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                                                 error:&error];
-                            
+
+                            NSData *jsonData = [self processOtherTestNames:MetaTestNamesElement];
                             if (! jsonData) {
                                 NSLog(@"Got an error: %@", error);
                             } else {
@@ -223,7 +158,8 @@ static NSString *kName_Discipline_name = @"name";
                             TBXMLElement *DisciplineElement = [TBXML childElementNamed:kName_Discipline parentElement:Disciplines];
                             
                             NSMutableDictionary *disciplinesDictionary = [[NSMutableDictionary alloc]init];
-                            
+                            int idx;
+                            NSError *error;
                             idx = 0;
                             
                             while (DisciplineElement != nil) {
@@ -274,6 +210,82 @@ static NSString *kName_Discipline_name = @"name";
     
     }
     // [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnlySelfAndWait];
+}
+
+
++(int)countXMLelementsinTBXMLObject:(TBXML *)tbxmlObject parentElement:(TBXMLElement *)parentElement childElementName:(NSString *)childElementName {
+    
+    TBXMLElement * element = [TBXML childElementNamed:childElementName parentElement:parentElement];
+    int i = 0;
+    while (element != nil) {
+        i++;
+        element = [TBXML nextSiblingNamed:childElementName searchFromElement:element];
+    }
+    return i;
+}
+
++(NSData *)processOtherTestNames:(TBXMLElement *)metaTestNamesElement {
+    
+    TBXMLElement *AlternateTestNameElement = [TBXML childElementNamed:kName_MetaTestNames_AlternateTestName parentElement:metaTestNamesElement];
+    
+    NSMutableDictionary *alternateTestNamesDictionary = [[NSMutableDictionary alloc]init];
+    
+    int idx = 0;
+    
+    while (AlternateTestNameElement != nil) {
+        NSString *keyIdx = [NSString stringWithFormat:@"%d",idx];
+        [alternateTestNamesDictionary setObject:[TBXML textForElement:AlternateTestNameElement]forKey:keyIdx];
+        
+        idx++;
+        AlternateTestNameElement = [TBXML nextSiblingNamed:kName_MetaTestNames_AlternateTestName searchFromElement:AlternateTestNameElement];
+    }
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:alternateTestNamesDictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    return jsonData;
+    
+}
+
++(NSSet *)processCollectionSpecimenElement:(TBXMLElement *)collectionSpecimenElement localContext:(NSManagedObjectContext *)localContext {
+    NSMutableSet *collectionSpecimenSet = [[NSMutableSet alloc]init];
+    
+    while (collectionSpecimenElement != nil) {
+        
+        NSMutableSet *collectionMethodSet = [[NSMutableSet alloc]init];
+        
+        CollectionSpecimen* newCollectionSpecimen = [CollectionSpecimen MR_createInContext:localContext];
+        
+        newCollectionSpecimen.type = [TBXML valueOfAttributeNamed:kName_CollectedSpecimen_type forElement:collectionSpecimenElement];
+        newCollectionSpecimen.snomedConceptID = [TBXML valueOfAttributeNamed:kName_SNOMEDCT_Concept_ID forElement:collectionSpecimenElement];
+        newCollectionSpecimen.topographyRequired = [TBXML valueOfAttributeNamed:kName_CollectedSpecimen_topographyRequired forElement:collectionSpecimenElement];
+        newCollectionSpecimen.morphologyRequired = [TBXML valueOfAttributeNamed:kName_CollectedSpecimen_morphologyRequired forElement:collectionSpecimenElement];
+        
+        
+        TBXMLElement *CollectionMethodElement = [TBXML childElementNamed:kName_CollectionMethod parentElement:collectionSpecimenElement];
+        while (CollectionMethodElement != nil) {
+            
+            CollectionMethod* newCollectionMethod = [CollectionMethod MR_createInContext:localContext];
+            
+            // set the relevant data
+            newCollectionMethod.snomedConceptID = [TBXML valueOfAttributeNamed:kName_SNOMEDCT_Concept_ID forElement:CollectionMethodElement];
+            newCollectionMethod.method = [TBXML valueOfAttributeNamed:kName_CollectionMethod_method forElement:CollectionMethodElement];
+            
+            [collectionMethodSet addObject:newCollectionMethod];
+            
+            CollectionMethodElement = [TBXML nextSiblingNamed:kName_CollectionMethod searchFromElement:CollectionMethodElement];
+        }
+        
+        [newCollectionSpecimen addCollectionMethodsRelationship:collectionMethodSet];
+        
+        [collectionSpecimenSet addObject:newCollectionSpecimen];
+        
+        collectionSpecimenElement = [TBXML nextSiblingNamed:kName_CollectedSpecimen searchFromElement:collectionSpecimenElement];
+    }
+
+    return collectionSpecimenSet;
+    
 }
 
 +(BOOL)isTestAlreadyImported:(NLMCTest *) nlmcTestToCheck {
