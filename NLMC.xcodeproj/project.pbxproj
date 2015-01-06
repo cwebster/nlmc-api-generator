@@ -165,8 +165,6 @@
 				DE0432901A35023600F09F4C /* AppDelegate.m */,
 				DE0432971A35023600F09F4C /* NLMC.xcdatamodeld */,
 				DE04328D1A35023600F09F4C /* Supporting Files */,
-				DEDDEF811A52FC5E00F6805D /* CWNLMCXMLParser.h */,
-				DEDDEF821A52FC5E00F6805D /* CWNLMCXMLParser.m */,
 			);
 			path = NLMC;
 			sourceTree = "<group>";
@@ -218,6 +216,8 @@
 				DE0432BC1A35047200F09F4C /* CWFileUtilities.m */,
 				DE0432B71A35026200F09F4C /* CWNLMCFunctions.h */,
 				DE0432B81A35026200F09F4C /* CWNLMCFunctions.m */,
+				DEDDEF811A52FC5E00F6805D /* CWNLMCXMLParser.h */,
+				DEDDEF821A52FC5E00F6805D /* CWNLMCXMLParser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";

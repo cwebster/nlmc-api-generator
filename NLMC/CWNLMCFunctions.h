@@ -14,17 +14,11 @@
 
 
 
-@interface CWNLMCFunctions : NSObject <NSXMLParserDelegate>
+@interface CWNLMCFunctions : NSObject
 
-@property (nonatomic, retain) NSXMLParser* parser;
-@property (nonatomic, retain) NLMCTest* currentTest;
-@property (nonatomic, retain) NSMutableString* currentNodeContent;
 @property (nonatomic, retain) NSManagedObjectContext* moc;
-@property (nonatomic, retain) NSMutableSet *collectionMethodSet;
-@property (nonatomic, retain) NSMutableSet *collectionSpecimenSet;
-@property (nonatomic, retain) NSString *catalogueVersion;
 
-+ (NSMutableDictionary* )getTestNamesJSON:(NSURL*)jsonFileUrl;
-- (void)parseXMLFile:(NSURL*)pathToFile;
++ (void)createTestNamesJSON;
+
 
 @end

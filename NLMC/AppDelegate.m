@@ -19,13 +19,14 @@
 {
     // Insert code here to initialize your application
 
-    
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"nlmcTestDatabase.sqlite"];
     
 }
 
 - (void)applicationWillTerminate:(NSNotification*)aNotification
 {
     // Insert code here to tear down your application
+    [MagicalRecord cleanUp];
 }
 
 #pragma mark - Core Data Saving and Undo support

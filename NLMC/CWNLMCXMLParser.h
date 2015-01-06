@@ -18,7 +18,7 @@
 
 @interface CWNLMCXMLParser : NSObject
 
-+ (void)parseXMLFile:(NSURL*)pathToFile;
++ (void) parseXMLFile:(NSURL*)pathToFile;
 + (void) traverseElement:(TBXMLElement *)element;
 
 @end

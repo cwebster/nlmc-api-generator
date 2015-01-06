@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "CWMainViewController.h"
+@class CWMainViewController;
 
 @interface CWMainWindowController : NSWindowController
 

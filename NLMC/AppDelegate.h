@@ -10,6 +10,5 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (strong, nonatomic) NSManagedObjectContext* managedObjectContext;
 
 @end
