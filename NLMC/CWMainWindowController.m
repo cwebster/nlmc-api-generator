@@ -9,6 +9,7 @@
 #import "CWMainWindowController.h"
 #import <MagicalRecord/CoreData+MagicalRecord.h>
 #import "CWNLMCXMLParser.h"
+#import "CWMainViewController.h"
 
 @interface CWMainWindowController ()
 
@@ -21,6 +22,8 @@
     [super windowDidLoad];
     
     self.moc = [NSManagedObjectContext MR_contextForCurrentThread];
+    
+    self.mainViewController = (CWMainViewController *)self.window.contentViewController;
 
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     NSLog(@"vc = %@", self.contentViewController);
@@ -62,7 +65,16 @@
 
 - (IBAction)emptyDatabase:(id)sender {
     
-    [NLMCTest MR_truncateAll];
+   [NLMCTest MR_truncateAll];
+    
+    
+    NSRange range = NSMakeRange(0, [[self.mainViewController.nlmcArrayController arrangedObjects] count]);
+    [self.mainViewController.nlmcArrayController removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
+    
+    [self.moc MR_saveOnlySelfAndWait];
+}
+
+- (IBAction)exportJSON:(id)sender {
     
 }
 

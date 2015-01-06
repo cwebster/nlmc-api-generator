@@ -42,7 +42,13 @@
 -(void)nlmcTestTableViewSelectionDidChange:(NSNotification *)notification
 {
     //up date sub tables on table change
-    self.collectionSpecimensDataSource.currentSpecimensMethodsArray = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionSpecimen"] allObjects]];;
+    if ([self.nlmcArrayController.arrangedObjects count] > 0) {
+        self.collectionSpecimensDataSource.currentSpecimensMethodsArray = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionSpecimen"] allObjects]];;
+    } else if ([self.nlmcArrayController.arrangedObjects count] == 0) {
+        [self.collectionSpecimensDataSource.currentSpecimensMethodsArray removeAllObjects];
+    }
+    
+    
     
     // Reload New Data
     [self.collectionSpecimensTableView reloadData];

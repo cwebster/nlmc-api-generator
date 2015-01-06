@@ -7,13 +7,16 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "CWMainViewController.h"
 
 @interface CWMainWindowController : NSWindowController
 
 @property NSManagedObjectContext *moc;
+@property (nonatomic, strong) IBOutlet CWMainViewController *mainViewController;
 
 - (IBAction)parseNLMCXML:(id)sender;
 - (IBAction)emptyDatabase:(id)sender;
+- (IBAction)exportJSON:(id)sender;
 
 
 @end

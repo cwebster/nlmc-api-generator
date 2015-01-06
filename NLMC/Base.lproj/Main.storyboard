@@ -654,7 +654,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                         <toolbar key="toolbar" implicitIdentifier="C319EB7E-455D-4518-8DB3-6C5A77897267" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="JWU-39-oxK">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="r7w-LF-Vyn"/>
@@ -670,10 +670,16 @@
                                         <action selector="emptyDatabase:" target="B8D-0N-5wS" id="Uc7-vL-G7I"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="6CEE2637-675A-470F-A9B7-E26420C850E1" label="Export JSON" paletteLabel="Export JSON" tag="-1" image="file_database" id="BZ6-iw-b2k">
+                                    <connections>
+                                        <action selector="exportJSON:" target="B8D-0N-5wS" id="h5c-95-R8X"/>
+                                    </connections>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="r7w-LF-Vyn"/>
                                 <toolbarItem reference="fbS-nG-Luf"/>
+                                <toolbarItem reference="BZ6-iw-b2k"/>
                                 <toolbarItem reference="v0f-lC-4wP"/>
                                 <toolbarItem reference="nUU-Os-qVE"/>
                                 <toolbarItem reference="xa3-J1-ONd"/>
@@ -681,11 +687,10 @@
                         </toolbar>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="ouP-lg-F80"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="mu6-uV-Ijn" customClass="CWMainViewController"/>
             </objects>
             <point key="canvasLocation" x="587" y="93"/>
         </scene>
@@ -735,7 +740,7 @@
                                     <rect key="frame" x="1" y="101.26483470201492" width="199" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.025914690264714105" horizontal="NO" id="XyZ-ds-wuH">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="XyZ-ds-wuH">
                                     <rect key="frame" x="224" y="17" width="15" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -778,7 +783,7 @@
                                 </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jyt-vW-bD0">
-                                <rect key="frame" x="266" y="322" width="61" height="17"/>
+                                <rect key="frame" x="266" y="322" width="101" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="NMLC ID" id="BVz-E1-0zx">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -909,7 +914,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Idr-bM-qui" id="kaJ-Q5-UT2">
-                                            <rect key="frame" x="0.0" y="0.0" width="119" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="237" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1038,10 +1043,11 @@
                 </arrayController>
                 <userDefaultsController representsSharedInstance="YES" id="YCq-hk-am1"/>
             </objects>
-            <point key="canvasLocation" x="622.5" y="596"/>
+            <point key="canvasLocation" x="587.5" y="568"/>
         </scene>
     </scenes>
     <resources>
+        <image name="file_database" width="22" height="22"/>
         <image name="file_xml" width="32" height="32"/>
         <image name="trash" width="32" height="32"/>
     </resources>
