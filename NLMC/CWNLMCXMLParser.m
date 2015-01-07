@@ -141,14 +141,16 @@ static NSString *kName_Discipline_name = @"name";
                             
                             // Create a json string of the alternate testnames.
                             TBXMLElement *MetaTestNamesElement = [TBXML childElementNamed:kName_MetaTestNames parentElement:NLMC_TestMetaData];
+                            TBXMLElement *AlternateTestNameElement = [TBXML childElementNamed:kName_MetaTestNames_AlternateTestName parentElement:MetaTestNamesElement];
                             
                             // Set Display name
                             newTest.displayName = [TBXML valueOfAttributeNamed:kName_MetaTestNames_displayName forElement:MetaTestNamesElement];
-
-                            NSData *jsonData = [self processOtherTestNames:MetaTestNamesElement];
+                            
+                            NSData *jsonData = [self concateElementToJson:AlternateTestNameElement elementName:kName_MetaTestNames_AlternateTestName];
                             if (! jsonData) {
                                 NSLog(@"Got an error: %@", error);
                             } else {
+                                 NSLog(@"Got an name");
                                 newTest.alternateTestNames= [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
                                 
                             }
@@ -157,27 +159,13 @@ static NSString *kName_Discipline_name = @"name";
                             TBXMLElement *Disciplines = [TBXML childElementNamed:kName_Disciplines parentElement:NLMC_TestMetaData];
                             TBXMLElement *DisciplineElement = [TBXML childElementNamed:kName_Discipline parentElement:Disciplines];
                             
-                            NSMutableDictionary *disciplinesDictionary = [[NSMutableDictionary alloc]init];
-                            int idx;
-                            NSError *error;
-                            idx = 0;
-                            
-                            while (DisciplineElement != nil) {
-                                NSString *keyIdx = [NSString stringWithFormat:@"%d",idx];
-                                [disciplinesDictionary setObject:[TBXML valueOfAttributeNamed:kName_Discipline_name forElement:DisciplineElement] forKey:keyIdx];
-                                
-                                idx++;
-                                DisciplineElement = [TBXML nextSiblingNamed:kName_Discipline searchFromElement:DisciplineElement];
-                            }
-                            
-                            NSData *jsonDataDisciplines = [NSJSONSerialization dataWithJSONObject:disciplinesDictionary
-                                                                                          options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-                                                                                            error:&error];
+                            NSData *jsonDataDisciplines = [self concateAttributeToJson:DisciplineElement attributeName:kName_Discipline_name elementName:kName_Discipline];
                             
                             if (! jsonDataDisciplines) {
                                 NSLog(@"Got an error: %@", error);
                             } else {
                                 newTest.discipline = [[NSString alloc] initWithData:jsonDataDisciplines encoding:NSUTF8StringEncoding];
+                            
                             }
                             
                             
@@ -224,24 +212,46 @@ static NSString *kName_Discipline_name = @"name";
     return i;
 }
 
-+(NSData *)processOtherTestNames:(TBXMLElement *)metaTestNamesElement {
++(NSData *)concateElementToJson:(TBXMLElement *)tbxmlElement elementName:(NSString *)elementName  {
     
-    TBXMLElement *AlternateTestNameElement = [TBXML childElementNamed:kName_MetaTestNames_AlternateTestName parentElement:metaTestNamesElement];
-    
-    NSMutableDictionary *alternateTestNamesDictionary = [[NSMutableDictionary alloc]init];
+    NSMutableDictionary *concatedDictionary = [[NSMutableDictionary alloc]init];
     
     int idx = 0;
     
-    while (AlternateTestNameElement != nil) {
+    while (tbxmlElement != nil) {
         NSString *keyIdx = [NSString stringWithFormat:@"%d",idx];
-        [alternateTestNamesDictionary setObject:[TBXML textForElement:AlternateTestNameElement]forKey:keyIdx];
+        [concatedDictionary setObject:[TBXML textForElement:tbxmlElement] forKey:keyIdx];
         
         idx++;
-        AlternateTestNameElement = [TBXML nextSiblingNamed:kName_MetaTestNames_AlternateTestName searchFromElement:AlternateTestNameElement];
+        tbxmlElement = [TBXML nextSiblingNamed:elementName searchFromElement:tbxmlElement];
     }
     
     NSError *error;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:alternateTestNamesDictionary
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:concatedDictionary
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    return jsonData;
+    
+}
+
+
++(NSData *)concateAttributeToJson:(TBXMLElement *)tbxmlElement attributeName:(NSString *)attributeName elementName:(NSString *)elementName {
+    
+    NSMutableDictionary *concatedDictionary = [[NSMutableDictionary alloc]init];
+    
+    int idx = 0;
+    
+    while (tbxmlElement != nil) {
+        NSString *keyIdx = [NSString stringWithFormat:@"%d",idx];
+        [concatedDictionary setObject:[TBXML valueOfAttributeNamed:attributeName forElement:tbxmlElement] forKey:keyIdx];
+        
+        idx++;
+        
+        tbxmlElement = [TBXML nextSiblingNamed:elementName searchFromElement:tbxmlElement];
+    }
+    
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:concatedDictionary
                                                        options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
                                                          error:&error];
     return jsonData;
