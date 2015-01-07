@@ -185,12 +185,8 @@ static NSString *kName_Discipline_name = @"name";
                             // check to see if test already in data base
                             // match on ID, version number and date updated, if already present dont sav
                             
-                                                    if ([self isTestAlreadyImported:newTest]) {
-                                                        NSLog(@"Saving");
-                                                        
-                                                    } else {
-                                                        // NSLog(@"Already in database not saving");
-                                                        NSLog(@"Not Saving");
+                                                    if (![self isTestAlreadyImported:newTest]) {
+                                                        [newTest MR_deleteEntity];
                                                     }
 
                             [importProgressWindow.importProgressIndicator incrementBy:1];
@@ -298,7 +294,7 @@ static NSString *kName_Discipline_name = @"name";
     NSArray *array = [NLMCTest MR_findAllWithPredicate:predicate inContext:myNewContext];
 
    
-    if (array == nil)
+    if ([array count] == 0)
     {
         return TRUE;
     }

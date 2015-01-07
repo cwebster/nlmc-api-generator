@@ -23,7 +23,8 @@
 
 + (void)createTestNamesJSON{
     
-    NSArray *testNames = [NLMCTest MR_findAll];
+
+    
     
     
 }

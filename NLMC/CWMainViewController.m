@@ -17,7 +17,7 @@
     [super viewDidLoad];
 
     // Set up core data stack
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"MyDatabase.sqlite"];
+   // [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"MyDatabase.sqlite"];
     self.moc = [NSManagedObjectContext MR_contextForCurrentThread];
 
     // Register Observers for table changes
@@ -36,6 +36,8 @@
     // Set datasources for sub tables
     [self.collectionSpecimensTableView setDataSource:self.collectionSpecimensDataSource];
     [self.collectionMethodsTableView setDataSource:self.collectionMethodsDataSource];
+    
+
 
 }
 
@@ -44,6 +46,7 @@
     //up date sub tables on table change
     if ([self.nlmcArrayController.arrangedObjects count] > 0) {
         self.collectionSpecimensDataSource.currentSpecimensMethodsArray = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionSpecimen"] allObjects]];;
+        self.alternativeNamesStr = [self.nlmcArrayController.selection valueForKey:@"alternateTestNames"];
     } else if ([self.nlmcArrayController.arrangedObjects count] == 0) {
         [self.collectionSpecimensDataSource.currentSpecimensMethodsArray removeAllObjects];
     }
@@ -73,7 +76,13 @@
     NSSet *methods = currentSpecimenCollection.collectionMethodsRelationship;
     self.collectionMethodsDataSource.currentCollectionMethodsArray = [methods allObjects];
     [self.collectionMethodsTableView reloadData];
-    
+        ;
+        [self.methodsCountTextField setStringValue:[NSString stringWithFormat:@"%ld", [self.collectionMethodsDataSource.currentCollectionMethodsArray count]]];
+        [self.collectionMethodsCountTextField setStringValue:[NSString stringWithFormat:@"%ld", [self.collectionSpecimensDataSource.currentSpecimensMethodsArray count]]];
+        [self.recordsCountTextField setStringValue:[NSString stringWithFormat:@"%ld", [self.nlmcArrayController.arrangedObjects count]]];
+        
+        [self createAnAlternateNameLabel];
+        
     }
 }
 
@@ -146,6 +155,23 @@
     // Update the view, if already loaded.
 }
 
-
+-(void)createAnAlternateNameLabel {
+    NSString *jsonString = self.alternativeNamesStr;
+    NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+   
+    
+    NSTextField *textField;
+    
+    textField = [[NSTextField alloc] initWithFrame:NSMakeRect(266, 323,100,17)];
+    [textField setStringValue:self.alternativeNamesStr];
+    [textField setBezeled:NO];
+    [textField setDrawsBackground:NO];
+    [textField setEditable:NO];
+    [textField setSelectable:NO];
+    [self.view addSubview:textField];
+    
+    
+}
 
 @end

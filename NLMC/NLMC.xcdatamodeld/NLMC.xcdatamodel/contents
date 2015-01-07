@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C68m" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C81f" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="CollectionMethod" representedClassName="CollectionMethod" syncable="YES">
         <attribute name="method" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="snomedConceptID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -10,7 +10,7 @@
         <attribute name="snomedConceptID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="topographyRequired" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="collectionMethodsRelationship" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectionMethod" inverseName="collectionSpecimenRelationship" inverseEntity="CollectionMethod" syncable="YES"/>
+        <relationship name="collectionMethodsRelationship" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CollectionMethod" inverseName="collectionSpecimenRelationship" inverseEntity="CollectionMethod" syncable="YES"/>
         <relationship name="nlmcTestRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NLMCTest" inverseName="collectionSpecimen" inverseEntity="NLMCTest" syncable="YES"/>
     </entity>
     <entity name="NLMCTest" representedClassName="NLMCTest" syncable="YES">
@@ -27,11 +27,11 @@
         <attribute name="snomedConceptID" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="collectionSpecimen" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CollectionSpecimen" inverseName="nlmcTestRelationship" inverseEntity="CollectionSpecimen" syncable="YES"/>
+        <relationship name="collectionSpecimen" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CollectionSpecimen" inverseName="nlmcTestRelationship" inverseEntity="CollectionSpecimen" syncable="YES"/>
     </entity>
     <elements>
         <element name="CollectionMethod" positionX="-45" positionY="54" width="128" height="90"/>
-        <element name="CollectionSpecimen" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="CollectionSpecimen" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="NLMCTest" positionX="-54" positionY="-9" width="128" height="255"/>
     </elements>
 </model>

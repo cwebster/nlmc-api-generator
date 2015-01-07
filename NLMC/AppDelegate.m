@@ -15,11 +15,21 @@
 
 @implementation AppDelegate
 
++(void)initialize {
+    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"nlmcTestDatabase.sqlite"];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification*)aNotification
 {
     // Insert code here to initialize your application
 
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"nlmcTestDatabase.sqlite"];
+    
+    
+}
+
+-(void)applicationWillFinishLaunching:(NSNotification *)notification   {
+    
+   
     
 }
 

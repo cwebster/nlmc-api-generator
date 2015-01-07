@@ -25,6 +25,11 @@
 @property (nonatomic, strong) IBOutlet NSTextField *haematologyTextField;
 @property (nonatomic, strong) IBOutlet NSTextField *immunologyTextField;
 @property (nonatomic, strong) IBOutlet NSTextField *disciplineTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *recordsCountTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *methodsCountTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *collectionMethodsCountTextField;
+@property (nonatomic, strong) IBOutlet NSTextField *recommendedNameTextField;
+@property (nonatomic, strong) NSString *alternativeNamesStr;
 
 
 @end
