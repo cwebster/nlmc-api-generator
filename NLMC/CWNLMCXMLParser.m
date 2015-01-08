@@ -196,6 +196,9 @@ static NSString *kName_Discipline_name = @"name";
     // [[NSManagedObjectContext MR_contextForCurrentThread] MR_saveOnlySelfAndWait];
 }
 
+#pragma mark -
+#pragma mark - ==== XML Element Processsing Methods ===
+#pragma mark -
 
 +(int)countXMLelementsinTBXMLObject:(TBXML *)tbxmlObject parentElement:(TBXMLElement *)parentElement childElementName:(NSString *)childElementName {
     
@@ -294,6 +297,11 @@ static NSString *kName_Discipline_name = @"name";
     
 }
 
+
+#pragma mark -
+#pragma mark - ==== Import Error Checking ===
+#pragma mark -
+
 +(BOOL)isTestAlreadyImported:(NLMCTest *) nlmcTestToCheck {
     
     NSManagedObjectContext *myNewContext = [NSManagedObjectContext MR_context];
@@ -312,6 +320,13 @@ static NSString *kName_Discipline_name = @"name";
     return FALSE;
 }
 
+
+#pragma mark -
+#pragma mark - ==== General TBXML Functions ===
+#pragma mark -
+
+
+// this method will process an unknown XML formal and log all elements and attributes
 + (void) traverseElement:(TBXMLElement *)element {
     do {
         // Display the name of the element

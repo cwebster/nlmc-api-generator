@@ -9,6 +9,7 @@
 #import "CWMainViewController.h"
 #import "CWNLMCFunctions.h"
 #import "CWFileUtilities.h"
+#import "CWRoundedTextFieldCell.h"
 
 @implementation CWMainViewController 
 
@@ -29,6 +30,8 @@
      addObserver:self selector:@selector(nlmcTestTableViewSelectionDidChange:)
      name:NSTableViewSelectionDidChangeNotification object:self.nlmcTestTableView];
 
+    // init arrays
+    self.alternateNamesTextFieldTags = [[NSMutableArray alloc]init];
 
     //init a datasources for sub tables
     self.collectionMethodsDataSource = [[CWCollectionMethodsTableViewDataSource alloc] init];
@@ -47,6 +50,9 @@
     if ([self.nlmcArrayController.arrangedObjects count] > 0) {
         self.collectionSpecimensDataSource.currentSpecimensMethodsArray = [NSMutableArray arrayWithArray:[[self.nlmcArrayController.selection valueForKey:@"CollectionSpecimen"] allObjects]];;
         self.alternativeNamesStr = [self.nlmcArrayController.selection valueForKey:@"alternateTestNames"];
+        [self removeAlternateNamesTextFields];
+        [self createAnAlternateNameLabel];
+    
     } else if ([self.nlmcArrayController.arrangedObjects count] == 0) {
         [self.collectionSpecimensDataSource.currentSpecimensMethodsArray removeAllObjects];
     }
@@ -81,7 +87,7 @@
         [self.collectionMethodsCountTextField setStringValue:[NSString stringWithFormat:@"%ld", [self.collectionSpecimensDataSource.currentSpecimensMethodsArray count]]];
         [self.recordsCountTextField setStringValue:[NSString stringWithFormat:@"%ld", [self.nlmcArrayController.arrangedObjects count]]];
         
-        [self createAnAlternateNameLabel];
+        
         
     }
 }
@@ -157,21 +163,45 @@
 
 -(void)createAnAlternateNameLabel {
     NSString *jsonString = self.alternativeNamesStr;
+    
     NSData *data = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    
     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
    
-    
-    NSTextField *textField;
-    
-    textField = [[NSTextField alloc] initWithFrame:NSMakeRect(266, 323,100,17)];
-    [textField setStringValue:self.alternativeNamesStr];
-    [textField setBezeled:NO];
-    [textField setDrawsBackground:NO];
-    [textField setEditable:NO];
-    [textField setSelectable:NO];
-    [self.view addSubview:textField];
-    
-    
+    if([json isKindOfClass:[NSDictionary class]])
+    {
+        NSDictionary *results = json;
+        
+        float nextx = 266;
+        
+        for (NSString* key in results) {
+            
+            NSString *value = [results objectForKey:key];
+            
+            NSTextField *textField;
+            textField = [[NSTextField alloc] initWithFrame:NSMakeRect(nextx, 323,100,17)];
+            CWRoundedTextFieldCell *theC = [[CWRoundedTextFieldCell alloc] initTextCell:@"textfield"];
+            [textField setCell:theC];
+            [textField setStringValue:value];
+            [textField setAlignment:NSCenterTextAlignment];
+            [textField sizeToFit];
+            [textField setBackgroundColor:[NSColor colorWithHue:2 saturation:76 brightness:88 alpha:1]];
+            [textField setTextColor:[NSColor whiteColor]];
+            [textField setEditable:NO];
+            [textField setSelectable:NO];
+            [self.view addSubview:textField];
+            [self.alternateNamesTextFieldTags addObject:textField];
+            
+            nextx = nextx + [textField frame].size.width + 5; //increment x co-ordinates
+        }
+    }
+}
+
+-(void)removeAlternateNamesTextFields {
+    for (NSTextField *remove in self.alternateNamesTextFieldTags) {
+        [remove removeFromSuperview];
+    }
+    [self.alternateNamesTextFieldTags removeAllObjects];
 }
 
 @end

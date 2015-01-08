@@ -30,6 +30,7 @@
 @property (nonatomic, strong) IBOutlet NSTextField *collectionMethodsCountTextField;
 @property (nonatomic, strong) IBOutlet NSTextField *recommendedNameTextField;
 @property (nonatomic, strong) NSString *alternativeNamesStr;
+@property (nonatomic, strong) NSMutableArray *alternateNamesTextFieldTags;
 
 
 @end
