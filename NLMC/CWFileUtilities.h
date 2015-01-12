@@ -26,5 +26,6 @@
 -(NSArray*) selectFiles;
 -(void)writeToCSVFile;
 -(NSArray *) getFilesInDirectory:(NSURL *)directoryUrl;
++ (void)writeUsingSavePanel:(NSString *)stringToSave;
 
 @end

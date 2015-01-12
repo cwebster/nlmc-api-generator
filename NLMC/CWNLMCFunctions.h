@@ -18,7 +18,8 @@
 
 @property (nonatomic, retain) NSManagedObjectContext* moc;
 
-+ (void)createTestNamesJSON;
++ (NSString *)createTestNamesJSON;
++ (NSString *)createCollectionSpecimenJSON;
 
 
 @end

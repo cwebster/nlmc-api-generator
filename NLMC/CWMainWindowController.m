@@ -11,6 +11,7 @@
 #import "CWNLMCXMLParser.h"
 #import "CWMainViewController.h"
 #import "CWNLMCFunctions.h"
+#import "CWFileUtilities.h"
 
 @interface CWMainWindowController ()
 
@@ -76,7 +77,13 @@
 }
 
 - (IBAction)exportJSON:(id)sender {
-    [CWNLMCFunctions createTestNamesJSON];
+    NSString *testNames = [CWNLMCFunctions createTestNamesJSON];
+    
+    [CWFileUtilities writeUsingSavePanel:testNames];
+    
+    NSString *sampleTypes = [CWNLMCFunctions createCollectionSpecimenJSON];
+    
+    [CWFileUtilities writeUsingSavePanel:sampleTypes];
     
 }
 

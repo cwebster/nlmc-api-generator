@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C81f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C68m" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
@@ -674,7 +674,7 @@
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="6CEE2637-675A-470F-A9B7-E26420C850E1" label="Export JSON" paletteLabel="Export JSON" tag="-1" image="file_database" id="BZ6-iw-b2k">
                                     <connections>
-                                        <action selector="exportJSON:" target="B8D-0N-5wS" id="h5c-95-R8X"/>
+                                        <action selector="exportJSON:" target="B8D-0N-5wS" id="ifS-4l-EBF"/>
                                     </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
@@ -713,13 +713,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Jcs-RY-gNB" id="en1-Td-dsx">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="238.5" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn editable="NO" width="235.41829444744778" minWidth="40" maxWidth="1000" id="Gy6-mU-Yhr">
+                                                <tableColumn editable="NO" width="234.91829444744778" minWidth="40" maxWidth="1000" id="Gy6-mU-Yhr">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="NLMC Test Name">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1010,13 +1010,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="FmS-5d-Zdk" id="4QT-xc-S7n">
-                                            <rect key="frame" x="0.0" y="0.0" width="238" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="238.5" height="19"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="collectionSpecimensForSelectedTest" editable="NO" width="235.33248321452993" minWidth="40" maxWidth="1000" id="oyu-JO-oJf">
+                                                <tableColumn identifier="collectionSpecimensForSelectedTest" editable="NO" width="234.83248321452993" minWidth="40" maxWidth="1000" id="oyu-JO-oJf">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Collection Specimens">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>

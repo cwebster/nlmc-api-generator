@@ -99,5 +99,25 @@
     return array;
 }
 
++ (void)writeUsingSavePanel:(NSString *)stringToSave {
+    // get the file url
+    NSSavePanel * zSavePanel = [NSSavePanel savePanel];
+    NSInteger zResult = [zSavePanel runModal];
+    if (zResult == NSFileHandlingPanelCancelButton) {
+        NSLog(@"writeUsingSavePanel cancelled");
+        return;
+    }
+    NSURL *zUrl = [zSavePanel URL];
+    
+    //write
+    BOOL zBoolResult = [stringToSave writeToURL:zUrl
+                             atomically:YES
+                               encoding:NSASCIIStringEncoding
+                                  error:NULL];
+    if (! zBoolResult) {
+        NSLog(@"writeUsingSavePanel failed");
+    }   
+}
+
 
 @end 
