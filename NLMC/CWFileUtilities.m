@@ -110,12 +110,15 @@
     NSURL *zUrl = [zSavePanel URL];
     
     //write
+    
+    NSError *error;
+    
     BOOL zBoolResult = [stringToSave writeToURL:zUrl
                              atomically:YES
-                               encoding:NSASCIIStringEncoding
-                                  error:NULL];
+                               encoding:NSUTF8StringEncoding
+                                  error:&error];
     if (! zBoolResult) {
-        NSLog(@"writeUsingSavePanel failed");
+        NSLog(@"writeUsingSavePanel failed: %@", error);
     }   
 }
 
