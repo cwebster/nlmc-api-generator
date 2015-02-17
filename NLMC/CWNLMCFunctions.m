@@ -37,7 +37,11 @@
         NSString *nlmcID = nlmcTest.nlmcID;
         NSString *disciplines = nlmcTest.discipline;
         NSString *alternateNames = nlmcTest.alternateTestNames;
+        NSString *displayName = nlmcTest.displayName;
+        NSString *fullName = nlmcTest.fullName;
         
+        [details setObject:fullName forKey:@"fullName"];
+        [details setObject:displayName forKey:@"displayName"];
         [details setObject:description forKey:@"description"];
         [details setObject:nlmcID forKey:@"nlmcID"];
         [details setObject:disciplines forKey:@"disciplines"];
