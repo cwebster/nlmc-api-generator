@@ -42,7 +42,7 @@
         
         [details setObject:fullName forKey:@"fullName"];
         [details setObject:displayName forKey:@"displayName"];
-        [details setObject:description forKey:@"description"];
+        //[details setObject:description forKey:@"description"];
         [details setObject:nlmcID forKey:@"nlmcID"];
         [details setObject:disciplines forKey:@"disciplines"];
         [details setObject:alternateNames forKey:@"alternateNames"];

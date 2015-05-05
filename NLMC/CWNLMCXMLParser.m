@@ -14,21 +14,22 @@
 // Constants for the XML element names that will be considered during the parse.
 // Declaring these as static constants reduces the number of objects created during the run
 // and is less prone to programmer error.
-static NSString *kName_NLMC_Test = @"NLMC_Test";
+static NSString *kName_NLMC_Test = @"NLMCTest";
 static NSString *kName_NLMC_Catalog_version = @"catalogueVersion";
+static NSString *kName_NLMC_Requestables = @"NLMCRequestables";
 static NSString *kName_NLMC_ID = @"NLMC_ID";
 static NSString *kName_FullName = @"FullName";
-static NSString *kName_SNOMEDCT = @"SNOMEDCT";
-static NSString *kName_Concept_ID = @"Concept_ID";
+static NSString *kName_SNOMEDCT = @"SnomedCT";
+static NSString *kName_Concept_ID = @"conceptID";
 static NSString *kName_SNOMEDCT_NLMC_RecommendedDescription = @"NLMC_RecommendedDescription";
 static NSString *kName_CollectedSpecimen = @"CollectedSpecimen";
 static NSString *kName_CollectedSpecimen_type = @"type";
-static NSString *kName_SNOMEDCT_Concept_ID = @"SNOMEDCT_Concept_ID";
+static NSString *kName_SNOMEDCT_Concept_ID = @"snomedCTConceptID";
 static NSString *kName_CollectedSpecimen_topographyRequired = @"topographyRequired";
 static NSString *kName_CollectedSpecimen_morphologyRequired= @"morphologyRequired";
 static NSString *kName_CollectionMethod = @"CollectionMethod";
-static NSString *kName_CollectionMethod_method = @"method";
-static NSString *kName_NLMC_TestMetaData = @"NLMC_TestMetaData";
+static NSString *kName_CollectionMethod_method = @"name";
+static NSString *kName_NLMC_TestMetaData = @"NLMCTestMetaData";
 static NSString *kName_NLMC_TestMetaData_status = @"status";
 static NSString *kName_NLMC_TestMetaData_version = @"version";
 static NSString *kName_NLMC_TestMetaData_firstPublishedVersion = @"firstPublishedVersion";
@@ -73,9 +74,11 @@ static NSString *kName_Discipline_name = @"name";
             if (tbxml.rootXMLElement) {
                 
                 TBXMLElement *root = tbxml.rootXMLElement;
+                TBXMLElement *requestables = [TBXML childElementNamed:kName_NLMC_Requestables parentElement:root];
                 
-                if (root) {
-                    TBXMLElement * NLMC_Test = [TBXML childElementNamed:kName_NLMC_Test parentElement:root];
+                if (requestables) {
+                    
+                    TBXMLElement * NLMC_Test = [TBXML childElementNamed:kName_NLMC_Test parentElement:requestables];
                     
                     if (NLMC_Test) {
                         // Get a count of the total number of records
